@@ -1,0 +1,18 @@
+<div class="set"
+style="cursor:pointer;"
+ >
+    <div >
+        <h4 >{{course.name}}</h4>
+        <p >{{course.description}}</p>
+    </div>
+    
+          <img class="image"
+            
+          [src]="course.imagePath" 
+        alt="{{course.name}}" 
+        class="img-responsive"
+         >
+       <h3>{{course.price}}</h3>
+       <a  [routerLink]="[index,'edit']">edit</a>
+
+</div>
