@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CourseService } from '../course.service';
+import { CourseUserService } from '../courseuser.service';
+
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 
@@ -15,6 +17,8 @@ export class CourseEditComponent implements OnInit {
   courseForm:FormGroup;
 
   constructor( private courseService:CourseService,
+              private courseUserService:CourseUserService,
+
                private route:ActivatedRoute,
                private router:Router) { }
 
@@ -33,9 +37,13 @@ export class CourseEditComponent implements OnInit {
   {if(this.editMode)
     {
       this.courseService.updateCourse(this.id,this.courseForm.value);
+      this.courseUserService.updateCourseUser(this.id,this.courseForm.value);
+
     }
     else{
       this.courseService.addCourse(this.courseForm.value);
+      this.courseUserService.addCourseUser(this.courseForm.value);
+
     }
    this.onCancle();
   }

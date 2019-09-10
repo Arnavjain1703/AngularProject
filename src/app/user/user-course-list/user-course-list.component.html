@@ -1,11 +1,9 @@
-<div class="row navbar">
-    <div class="col-lg-4 item">
-        <H1>HOME</H1>
+<app-user-course></app-user-course>
+<div>
+    <app-user-course-item 
+    *ngFor ="let course of courses;let i=index"
+    [course]="course"
+    [index]="i">
+    </app-user-course-item>
     </div>
-    <div class="col-lg-4 item">
-        <h1>CART</h1>
-    </div>
-    <div class="col-lg-4 item">
-        <H1>MY COURSES</H1>
-   </div>
-</div>
+    
