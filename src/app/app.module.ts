@@ -8,6 +8,9 @@ import { CourseService } from './course.service';
 import { CourseEditComponent } from './course-edit/course-edit.component';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -16,6 +19,9 @@ import { AppRoutingModule } from './app-routing.module';
     CourseListComponent,
     CourseItemComponent,
     CourseEditComponent,
+    HeaderComponent,
+    LoginComponent,
+    SignupComponent,
   
   ],
   imports: [
