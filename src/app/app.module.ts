@@ -11,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UserCourseListComponent } from './user/user-course-list/user-course-list.component';
+import { UserCourseItemComponent } from './user/user-course-item/user-course-item.component';
+import { UserCourseComponent } from './user/user-course/user-course.component';
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import { SignupComponent } from './signup/signup.component';
     HeaderComponent,
     LoginComponent,
     SignupComponent,
+    UserCourseListComponent,
+    UserCourseItemComponent,
+    UserCourseComponent,
   
   ],
   imports: [
