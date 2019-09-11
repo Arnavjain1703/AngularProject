@@ -1,20 +1,19 @@
-
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import {Subscription} from 'rxjs';
 import { CourseUser } from 'src/app/shared/courseuser.module';
-import { CourseUserService } from 'src/app/courseuser.service';
+import { UserCartService } from 'src/app/usercart.service';
 
 
- @Component({
-   selector: 'app-user-course-list',
-   templateUrl: './user-course-list.component.html',
-   styleUrls: ['./user-course-list.component.css']
- })
-export class UserCourseListComponent implements OnInit  {
+@Component({
+  selector: 'app-usercart',
+  templateUrl: './usercart.component.html',
+  styleUrls: ['./usercart.component.css']
+})
+export class UsercartComponent implements OnInit {
  subscription=Subscription;
   courses:CourseUser[];
-  constructor(private courseService:CourseUserService) { }
+  constructor(private userCartService:UserCartService) { }
 
   ngOnInit() {
 // this.subscription=this.courseService.courseChanged
@@ -22,7 +21,7 @@ export class UserCourseListComponent implements OnInit  {
 // this.courses=courses
 // }
 // );
-this.courses=this.courseService. getCoursesUser();
+this.courses=this.userCartService. getUserCart();
 }
 
 // ngOnDestroy()
