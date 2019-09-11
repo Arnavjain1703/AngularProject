@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { UserCourseComponent } from './user/user-course/user-course.component';
 import { UserCourseListComponent } from './user/user-course-list/user-course-list.component';
 import { UsercartComponent } from './user/usercart/usercart.component';
+import { MycourseComponent } from './user/mycourse/mycourse.component';
+
 const appRoutes: Routes=[
     {path: 'courselist', component:CourseListComponent},
     {path:'courselist/:id/edit',component:CourseEditComponent},
@@ -13,7 +15,10 @@ const appRoutes: Routes=[
     {path:'login',component:LoginComponent},
     {path:'usercourse',component:UserCourseComponent},
     {path:'usercourse/usercourselist',component:UserCourseListComponent},
-    {path:'usercart',component:UsercartComponent}
+    {path:'usercart',component:UsercartComponent},
+    {path:'usermycourse',component:MycourseComponent
+    }
+ 
 ]
 @NgModule(
     {

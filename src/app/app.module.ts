@@ -19,6 +19,9 @@ import { UserCourseItemComponent } from './user/user-course-list/user-course-ite
 import { UsercartComponent } from './user/usercart/usercart.component';
 import { UserCartService } from './usercart.service';
 import { UsercartitemComponent } from './user/usercart/usercartitem/usercartitem.component';
+import { MycourseComponent } from './user/mycourse/mycourse.component';
+import { MycourseItemComponent } from './user/mycourse/mycourse-item/mycourse-item.component';
+import { MyCourseService } from './mycourse.sercice';
 
 
 
@@ -36,6 +39,8 @@ import { UsercartitemComponent } from './user/usercart/usercartitem/usercartitem
     UserCourseItemComponent,
     UsercartComponent,
     UsercartitemComponent,
+    MycourseComponent,
+    MycourseItemComponent,
     
   
   ],
@@ -44,7 +49,7 @@ import { UsercartitemComponent } from './user/usercart/usercartitem/usercartitem
     ReactiveFormsModule,
     AppRoutingModule,
   ],
-  providers: [CourseService,CourseUserService,UserCartService],
+  providers: [CourseService,CourseUserService,UserCartService,MyCourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
