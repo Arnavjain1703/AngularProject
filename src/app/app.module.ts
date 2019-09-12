@@ -22,6 +22,18 @@ import { UsercartitemComponent } from './user/usercart/usercartitem/usercartitem
 import { MycourseComponent } from './user/mycourse/mycourse.component';
 import { MycourseItemComponent } from './user/mycourse/mycourse-item/mycourse-item.component';
 import { MyCourseService } from './mycourse.sercice';
+import { FrontPageComponent } from './front-page/front-page.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { WebDevelopmentComponent } from './categories/web-development/web-development.component';
+import { DevelopmentService } from './development.service';
+import { WebItemComponent } from './categories/web-development/web-item/web-item.component';
+import { DesigningComponent } from './categories/designing/designing.component';
+import { DesigningItemComponent } from './categories/designing/designing-item/designing-item.component';
+import { MyCraftService } from './services/carft.service';
+import { MyDesignService } from './services/designing.service';
+import { MyMusicService } from './services/music.service';
+import { CraftComponent } from './categories/craft/craft.component';
+import { CraftItemComponent } from './categories/craft/craft-item/craft-item.component';
 
 
 
@@ -41,6 +53,14 @@ import { MyCourseService } from './mycourse.sercice';
     UsercartitemComponent,
     MycourseComponent,
     MycourseItemComponent,
+    FrontPageComponent,
+    DropdownDirective,
+    WebDevelopmentComponent,
+    WebItemComponent,
+    DesigningComponent,
+    DesigningItemComponent,
+    CraftComponent,
+    CraftItemComponent,
     
   
   ],
@@ -48,8 +68,9 @@ import { MyCourseService } from './mycourse.sercice';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    
   ],
-  providers: [CourseService,CourseUserService,UserCartService,MyCourseService],
+  providers: [CourseService,CourseUserService,UserCartService,MyCourseService,DevelopmentService,MyCraftService,MyDesignService,MyMusicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

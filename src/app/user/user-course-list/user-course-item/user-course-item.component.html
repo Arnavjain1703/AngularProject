@@ -1,4 +1,4 @@
-<div class="set"
+<!-- <div class="set"
 style="cursor:pointer;"
  >
     <div >
@@ -18,4 +18,29 @@ style="cursor:pointer;"
        <a class="btn btn-primary" (click)="onAddToMyCourse()" style="cursor:pointer">BYE COURSE</a>      
     
 
-</div>
+</div> -->
+    <div class="set"> 
+   <div class="row ">
+     <div class="col-lg-3 image">
+    <img style="height:70px"
+             
+          [src]="course.imagePath" 
+        alt="{{course.name}}" 
+        class="img-responsive"
+         >
+         </div>
+   <div class="col-lg-6">
+           <h1>{{course.name}}</h1>
+        <p>{{course.description}}</p>
+      </div>
+      <div class="col-lg-3 ">
+          <a class="btn btn-primary"  (click)="onAddToCart()" style="cursor:pointer">ADD TO CART</a>
+          <br>
+          <br>
+          <a class="btn btn-primary " (click)="onAddToMyCourse()" style="cursor:pointer">BYE COURSE</a>
+      </div>
+      </div>
+      </div>
+           
+         
+

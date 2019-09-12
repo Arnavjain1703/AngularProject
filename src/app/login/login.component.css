@@ -2,5 +2,16 @@
 {
  text-align: center;
   border: black  2px solid;
- background:green;
+ background:#EAECEE;
+ border-radius:10%;
 }
+.row
+{
+    padding-top:60px;
+}
+.bgImg
+{
+    background:url( https://thumbs.dreamstime.com/b/pattern-school-related-items-seamless-sketch-like-illustration-books-pens-other-objects-studies-background-72319278.jpg);
+     background-size:cover;
+     height:600px;
+    }

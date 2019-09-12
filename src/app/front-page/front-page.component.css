@@ -1,0 +1,76 @@
+.bgImg
+{
+    background: url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+    background-size:cover;
+    width:100%;
+    height:500px;
+    color:white;
+}
+.position
+{
+    padding-top: 15%;
+    padding-left:15%;
+    font-size:70px;
+}
+.Pposition
+{
+    padding-left:15%;
+    font-size:40px;
+    color:white;
+}
+.row
+{   
+    height:12%;
+    padding-bottom: 0px;
+    background-color: #EA1051;
+}
+.col-sm-4
+{
+    text-align:center;
+    padding-top:4px;
+}
+
+.size
+
+{
+    font-size:20px;
+    padding:3%;
+}
+
+.icon
+{
+    font-size:150%
+}
+.mt
+{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.instruction
+{
+    background:url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/IjFi-wx/moving-stars-on-black-background_41x3vg3x__F0000.png);
+    width:100%;
+    height: 200px;
+    margin-bottom:80px;
+}
+
+.content
+{
+    padding-left:30%;
+    padding-top:4%;
+    color:white;
+}
+
+.col-md-3
+{
+    border:solid black 2px;
+    text-align: center;
+}
+#catigory
+{
+    background:  #F2F4F4 
+}
+.bgcl
+{
+    background: #EAECEE
+}
