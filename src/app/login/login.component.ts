@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
-import { hostViewClassName } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -18,12 +17,12 @@ loginForm2:FormGroup;
     let adminPassword="";
     let adminMail="";
     this.loginForm1=new FormGroup({
-    'Email':new FormControl(userMail,Validators.required),
+    'Email':new FormControl(userMail,[Validators.email,Validators.required]),
      'password':new FormControl(userPassword,Validators.required),
 
     });
     this.loginForm2=new FormGroup({
-      'email':new FormControl(adminMail,Validators.required),
+      'email':new FormControl(adminMail,[Validators.required,Validators.email]),
        'Password':new FormControl(adminPassword,Validators.required)
     });
   }

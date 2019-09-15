@@ -11,6 +11,8 @@ import { FrontPageComponent } from './front-page/front-page.component';
 import { WebDevelopmentComponent } from './categories/web-development/web-development.component';
 import { CraftComponent } from './categories/craft/craft.component';
 import { DesigningComponent } from './categories/designing/designing.component';
+import { MusicComponent } from './categories/music/music.component';
+import { SignupComponent } from './signup/signup.component';
 
 const appRoutes: Routes=[
     {path:'',redirectTo: 'frontpage', pathMatch:'full'}, 
@@ -25,7 +27,9 @@ const appRoutes: Routes=[
     {path:'frontpage',component:FrontPageComponent},
     {path:'webdevelopment', component:WebDevelopmentComponent},
     {path:'craft',component:CraftComponent},
-    {path:'designing',component:DesigningComponent}
+    {path:'designing',component:DesigningComponent},
+    {path:'music',component:MusicComponent},
+    {path:'signup',component:SignupComponent}
 
   
  

@@ -7,11 +7,16 @@ import { CourseUser } from 'src/app/shared/courseuser.module';
   styleUrls: ['./mycourse-item.component.css']
 })
 export class MycourseItemComponent implements OnInit {
+  show=false;
   @Input () course:CourseUser;
   @Input()index:number;
   constructor() { }
 
   ngOnInit() {
+  }
+  shows()
+  {
+   this.show=!this.show;
   }
 
 }

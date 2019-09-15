@@ -1,21 +1,33 @@
-<div class="set"
-style="cursor:pointer;"
- >
-    <div >
-        <h4 >{{course.name}}</h4>
-        <p >{{course.description}}</p>
+
+  
+   <div class="row scale ">
+    <div class="col-lg-4 set"(click)="shows()"><div class="desc  " *ngIf="this.show">{{course.description}}</div>
+                          <div class="desc"*ngIf="!this.show"><h1><u>DESCRIPTION</u></h1></div>
+  </div>
+    <div class="col-lg-8">
+      <div class="row set">
+   <div class="col-lg-4 " style="padding-left:0%">
+     
+  <img style="height:100px ;width:100%"
+           
+        [src]="course.imagePath" 
+      alt="{{course.name}}" 
+      class="img-responsive img "
+       >
+       </div>
+ <div class="col-lg-4 name" style="height:100px" >
+         <h3>{{course.name}}</h3>
+        
     </div>
-    
-          <img class="image"
-            
-          [src]="course.imagePath" 
-        alt="{{course.name}}" 
-        class="img-responsive"
-         >
-       <h3>{{course.price}}</h3>
-       <hr>
-
+    <div class="col-lg-4" style="height:100px" >
+      <span class="glyphicon glyphicon-hand-right"></span> <a class="btn btn-danger" (click)="onDelete()" style="cursor:pointer"><span class="glyphicon glyphicon-trash"></span>   X</a>
+        <br>
+        <br>
+        <span class="glyphicon glyphicon-hand-right"> </span> <a  (click)="onAddToMyCourse()"  class="btn btn-primary"style="cursor:pointer">    <span class="glyphicon glyphicon-shopping-cart"></span>  BYE COURSE</a>
+    </div>
+    </div>
+    </div>
+    </div>
+         
        
-    
 
-</div>

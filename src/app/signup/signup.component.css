@@ -1,0 +1,38 @@
+H1
+{
+    text-align: CENTER;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.bgImg
+{
+    background:url( https://thumbs.dreamstime.com/b/pattern-school-related-items-seamless-sketch-like-illustration-books-pens-other-objects-studies-background-72319278.jpg);
+     background-size:cover;
+     height:800px;
+
+    
+}
+.userSignup,.adminSignup
+{
+ text-align: center;
+  border: black  2px solid;
+ background:#EAECEE;
+ border-radius:10%;
+
+}
+.set
+{
+    background: #EAECEE;
+    
+    border:solid black 2px;
+    margin-bottom: 100px;
+    
+}
+.button
+{
+padding-bottom: 10px;
+
+}
+input.ng-invalid.ng-touched
+{
+    border:red solid 1px;
+}

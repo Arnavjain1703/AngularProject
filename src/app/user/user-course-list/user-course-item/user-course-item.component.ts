@@ -12,7 +12,10 @@ import { MyCourseService } from 'src/app/mycourse.sercice';
    styleUrls: ['./user-course-item.component.css']
 })
 export class UserCourseItemComponent implements OnInit {
-
+    show=false;
+    add=false;
+    buy=false;
+    
   @Input () course:CourseUser;
   @Input()index:number;
   constructor(private acService:UserCartService,private mcService:MyCourseService
@@ -20,11 +23,22 @@ export class UserCourseItemComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   onAddToCart(){
+        
+        {
   this.acService.addCourse(this.course);
-  }
+  this.add=true;
+  
+        }
+}
   onAddToMyCourse()
   {
         this.mcService.addMyCourseUser(this.course);
+        this.buy=true;
+  }
+  shows()
+  {
+   this.show=!this.show;
   }
 }

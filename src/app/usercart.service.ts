@@ -14,6 +14,14 @@ export class UserCartService{
   } 
   addCourse(course:CourseUser){
     this.courses.push(course);
-    this.cartChanged.next(this.courses.slice());
+    //  this.cartChanged.next(this.courses.slice());
 }
+deleteCraft(index:number)
+{
+   this.courses.splice(index,1);
+   this.cartChanged.next(this.courses.slice())
+    
+
+}
+
 }

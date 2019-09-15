@@ -13,6 +13,6 @@ export class MyDesignService
     addDesign(course:CourseUser)
 {
  this.courses.push(course);
-//  this.coursesUserChanged.next(this.courses.slice())
+
 }
 }

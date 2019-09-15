@@ -10,7 +10,7 @@ import { MyCourseService } from 'src/app/mycourse.sercice';
 })
 export class WebItemComponent implements OnInit {
 
-
+  show=false;
 
   @Input () course:CourseUser;
   @Input()index:number;
@@ -25,6 +25,10 @@ export class WebItemComponent implements OnInit {
   onAddToMyCourse()
   {
         this.mcService.addMyCourseUser(this.course);
+  }
+  shows()
+  {
+   this.show=!this.show;
   }
 }
 

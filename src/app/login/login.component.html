@@ -1,9 +1,16 @@
+
 <div class="bgImg">
+<app-header></app-header>
+<div class="container bg">
+<div><h1>LOGIN YOURSELF </h1></div>
+<div><h1>AND GET STARTED </h1></div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-3 userLogin" >
-            <form [formGroup]="loginForm1">
+            <form [formGroup]="loginForm1" >
             <h1>LOGIN AS USER</h1>
         <hr>
         
@@ -16,8 +23,10 @@
             <label for="password">password</label>
             <input  formControlName="password" type="password" id="password" class="form-control" >
             </div>
-        <button type="button"[disabled]="!loginForm1!.valid"routerLink="/usercourse/usercourselist" class="btn btn-success" >SUBMIT</button>
-        </form>
+            <div class="button">
+        <button type="button" class="button"[disabled]="!loginForm1!.valid" routerLink="/usercourse/usercourselist" class="btn btn-success" >SUBMIT</button>
+            </div>
+    </form>
 
     </div>
         <div class="col-lg-2"></div>
@@ -34,8 +43,10 @@
                         <label for="Password">password</label>
                         <input type="Password" formControlName="Password" class="form-control" id="password" >
                         </div>
-            <button type="submit" routerLink="/courselist" [disabled]="!loginForm2!.valid" class="btn btn-success" >SUBMIT</button>
-            </form>
+          <div class="button">
+            <button  type="button"  routerLink="/courselist" [disabled]="!loginForm2!.valid" class="btn btn-success" >SUBMIT</button>
+          </div>
+        </form>
     </div>
     </div>
 </div>

@@ -1,43 +1,37 @@
-<!-- <div class="set"
-style="cursor:pointer;"
- >
-    <div >
-        <h4 >{{course.name}}</h4>
-        <p >{{course.description}}</p>
-    </div>
-    
-          <img class="image"
-            
-          [src]="course.imagePath" 
-        alt="{{course.name}}" 
-        class="img-responsive"
-         >
-       <h3>{{course.price}}</h3>
-       <hr>
-       <a class="btn btn-primary" (click)="onAddToCart()" style="cursor:pointer">ADD TO CART</a>
-       <a class="btn btn-primary" (click)="onAddToMyCourse()" style="cursor:pointer">BYE COURSE</a>      
-    
 
-</div> -->
-    <div class="set"> 
-   <div class="row ">
-     <div class="col-lg-3 image">
-    <img style="height:70px"
+  
+   <div class="row scale ">
+      <div class="col-lg-4 set"(click)="shows()"><div class="desc  " *ngIf="this.show">{{course.description}}</div>
+                            <div class="desc"*ngIf="!this.show"><h1><u>DESCRIPTION</u></h1></div>
+    </div>
+      <div class="col-lg-8">
+        <div class="row set">
+     <div class="col-lg-4 " style="padding-left:0%">
+       
+    <img style="height:100px ;width:100%"
              
           [src]="course.imagePath" 
         alt="{{course.name}}" 
-        class="img-responsive"
+        class="img-responsive img "
          >
          </div>
-   <div class="col-lg-6">
+   <div class="col-lg-4 name" style="height:100px" >
            <h1>{{course.name}}</h1>
-        <p>{{course.description}}</p>
+          
       </div>
-      <div class="col-lg-3 ">
-          <a class="btn btn-primary"  (click)="onAddToCart()" style="cursor:pointer">ADD TO CART</a>
-          <br>
-          <br>
-          <a class="btn btn-primary " (click)="onAddToMyCourse()" style="cursor:pointer">BYE COURSE</a>
+      
+      <div class="col-lg-4" style="height:100px" >
+        <div *ngIf="!add">
+        <span class="glyphicon glyphicon-hand-right"></span> <a  class="btn btn-primary" (click)="onAddToCart()" style="cursor:pointer">    <span class="glyphicon glyphicon-heart-empty"></span>  ADD TO CART</a>
+          </div><br>
+          <div *ngIf="add"><span class="glyphicon glyphicon-heart"></span ><span>added to cart</span></div>
+          
+          <div *ngIf="!buy" >
+          <span class="glyphicon glyphicon-hand-right"> </span> <a  (click)="onAddToMyCourse()"  class="btn btn-primary"style="cursor:pointer"> 
+           <span class="glyphicon glyphicon-shopping-cart"></span>Byu course</a>
+           </div>
+           <div *ngIf="buy"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div>
+      </div>
       </div>
       </div>
       </div>

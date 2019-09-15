@@ -1,6 +1,8 @@
 import { CourseUser } from '../shared/courseuser.module';
 
 
+
+
 export class MyCraftService
 {
     private courses: CourseUser[]=[
@@ -15,4 +17,5 @@ export class MyCraftService
  this.courses.push(course);
 //  this.coursesUserChanged.next(this.courses.slice())
 }
+
 }

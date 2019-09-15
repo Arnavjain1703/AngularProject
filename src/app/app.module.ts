@@ -8,7 +8,7 @@ import { CourseService } from './course.service';
 import { CourseUserService } from './courseuser.service';
 
 import { CourseEditComponent } from './course-edit/course-edit.component';
-import {  ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -34,6 +34,9 @@ import { MyDesignService } from './services/designing.service';
 import { MyMusicService } from './services/music.service';
 import { CraftComponent } from './categories/craft/craft.component';
 import { CraftItemComponent } from './categories/craft/craft-item/craft-item.component';
+import { MusicComponent } from './categories/music/music.component';
+import { MusicItemComponent } from './categories/music/music-item/music-item.component';
+import { Header2Component } from './header2/header2.component';
 
 
 
@@ -61,6 +64,9 @@ import { CraftItemComponent } from './categories/craft/craft-item/craft-item.com
     DesigningItemComponent,
     CraftComponent,
     CraftItemComponent,
+    MusicComponent,
+    MusicItemComponent,
+    Header2Component,
     
   
   ],
@@ -68,6 +74,7 @@ import { CraftItemComponent } from './categories/craft/craft-item/craft-item.com
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    FormsModule,
     
   ],
   providers: [CourseService,CourseUserService,UserCartService,MyCourseService,DevelopmentService,MyCraftService,MyDesignService,MyMusicService],

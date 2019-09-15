@@ -9,7 +9,7 @@ import { MyCourseService } from 'src/app/mycourse.sercice';
   styleUrls: ['./craft-item.component.css']
 })
 export class CraftItemComponent implements OnInit {
-
+  show=false;
   @Input () course:CourseUser;
   @Input()index:number;
   constructor(private acService:UserCartService,private mcService:MyCourseService
@@ -23,6 +23,10 @@ export class CraftItemComponent implements OnInit {
   onAddToMyCourse()
   {
         this.mcService.addMyCourseUser(this.course);
+  }
+  shows()
+  {
+   this.show=!this.show;
   }
 
 }

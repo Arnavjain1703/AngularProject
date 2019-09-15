@@ -1,8 +1,41 @@
 
-.image
+
+.img
 {
+    border-right :solid 4px black;
+    
+    
+
+    
+
+}
+.set
+{
+    background:rgb(232, 233, 233);
+    border:solid 4px black;
+
+}
+
+.glyphicon
+{
+    font-size: 20px;
+}
+.name
+{
+    border-right:solid black 4px;
+    
+}
+.row
+{
+  box-shadow: 4px  red;    
+}
+
+.desc{
+    text-align:center;
     padding-top:10px;
-    padding-left:20px;
-
-
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding-bottom:20px;
+    
+    
 }
