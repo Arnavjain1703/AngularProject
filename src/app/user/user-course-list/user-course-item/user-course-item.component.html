@@ -1,40 +1,53 @@
 
   
-   <div class="row scale ">
-      <div class="col-lg-4 set"(click)="shows()"><div class="desc  " *ngIf="this.show">{{course.description}}</div>
-                            <div class="desc"*ngIf="!this.show"><h1><u>DESCRIPTION</u></h1></div>
-    </div>
-      <div class="col-lg-8">
-        <div class="row set">
-     <div class="col-lg-4 " style="padding-left:0%">
+   
+
+        <div class="container bgimg">
+        <div class="row ">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4 set anima" (click)="shows()" style="padding-left:0% ;height:100px">
        
-    <img style="height:100px ;width:100%"
+        <img style= "width:100%;height: 99px"
              
-          [src]="course.imagePath" 
+         [src]="course.imagePath" 
         alt="{{course.name}}" 
         class="img-responsive img "
          >
          </div>
-   <div class="col-lg-4 name" style="height:100px" >
-           <h1>{{course.name}}</h1>
-          
+        <div class="col-lg-4 name set anima" (click)="shows()"style="height:100px" >
+           <h1 style="font-family: Georgia, 'Times New Roman', Times, serif ;text-align:center">{{course.name}}</h1>
+
+        </div>
+        <div class="col-lg-2 ">  <div *ngIf="!add">
+          <span class="glyphicon glyphicon-hand-right"></span> <a  class="btn btn-primary" (click)="onAddToCart()" style="cursor:pointer">    <span class="glyphicon glyphicon-heart-empty"></span>  ADD TO CART</a>
+            </div><br>
+            <div *ngIf="add"><span class="glyphicon glyphicon-heart"></span ><span>added to cart</span></div>
+            
+            <div *ngIf="!buy" >
+            <span class="glyphicon glyphicon-hand-right"> </span> <a  (click)="onAddToMyCourse()"  class="btn btn-primary"style="cursor:pointer"> 
+             <span class="glyphicon glyphicon-shopping-cart"></span>Byu course</a>
+             </div>
+             <div *ngIf="buy"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div></div>
+      
+      
       </div>
       
-      <div class="col-lg-4" style="height:100px" >
-        <div *ngIf="!add">
-        <span class="glyphicon glyphicon-hand-right"></span> <a  class="btn btn-primary" (click)="onAddToCart()" style="cursor:pointer">    <span class="glyphicon glyphicon-heart-empty"></span>  ADD TO CART</a>
-          </div><br>
-          <div *ngIf="add"><span class="glyphicon glyphicon-heart"></span ><span>added to cart</span></div>
-          
-          <div *ngIf="!buy" >
-          <span class="glyphicon glyphicon-hand-right"> </span> <a  (click)="onAddToMyCourse()"  class="btn btn-primary"style="cursor:pointer"> 
-           <span class="glyphicon glyphicon-shopping-cart"></span>Byu course</a>
-           </div>
-           <div *ngIf="buy"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div>
-      </div>
-      </div>
-      </div>
-      </div>
+    </div>
+<div class="container">
+    <div class="desc" *ngIf="this.show"><div class="size"><u>{{course.name}}</u></div><div class="size">{{course.description}}</div>
+  <div style="text-align:center"> <img class="img2"
+             
+    [src]="course.imagePath" 
+  alt="{{course.name}}" 
+
+   ></div>
+   <div class="size">{{course.price}} Rs</div>
+    
+  
+  
+   </div>
+</div>
+    
            
          
 

@@ -14,7 +14,9 @@ H1
 .userSignup,.adminSignup
 {
  text-align: center;
-  border: black  2px solid;
+  /* border: black  2px solid; */
+  box-shadow:10px 10px 20px black;
+
  background:#EAECEE;
  border-radius:10%;
 
@@ -23,7 +25,8 @@ H1
 {
     background: #EAECEE;
     
-    border:solid black 2px;
+    box-shadow:10px 10px 20px black;
+    /* border:solid black 2px; */
     margin-bottom: 100px;
     
 }

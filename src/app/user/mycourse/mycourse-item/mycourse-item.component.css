@@ -1,39 +1,43 @@
-
+.descri{
+    margin: 5%;
+    text-align: center;
+    font-family: cursive;
+    background: #EAECEE ;
+    box-shadow:10px 10px 15px black;
+    
+   
+}
 
 .img
 {
     border-right :solid 4px black;
-    
-    
-
-    
-
 }
 .set
 {
     background:rgb(232, 233, 233);
     border:solid 4px black;
+    margin: 20px;
     
 }
 
-.glyphicon
-{
-    font-size: 20px;
+.size{
+    font-size: 200%
 }
 .name
 {
     border-right:solid black 4px;
     
 }
-.row
-{
-  box-shadow: 4px  red;    
+.img2{
+    height:200px ;width:50%;
+    box-shadow:5px 5px 5px black;
 }
+
 
 .desc{
     text-align:center;
-    padding-top:10px;
+    padding-top:20px ;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 50px;
-    padding-bottom:20px;
+    font-size: 100px;
+
 }

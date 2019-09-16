@@ -10,6 +10,7 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./course-list.component.css']
 })
 export class CourseListComponent implements OnInit  {
+  show=false;
  subscription=Subscription;
   courses:Course[];
   constructor(private courseService:CourseService) { }
@@ -21,6 +22,10 @@ export class CourseListComponent implements OnInit  {
 // }
 // );
 this.courses=this.courseService.getCourses();
+}
+shows()
+{
+ this.show=!this.show;
 }
 
 // ngOnDestroy()

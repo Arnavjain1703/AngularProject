@@ -64,6 +64,10 @@ export class CourseEditComponent implements OnInit {
     {
       this.MusicMode=true;
     }
+    onDelete()
+    {
+      
+    }
     
   
   onSubmit()
@@ -88,6 +92,7 @@ export class CourseEditComponent implements OnInit {
       this.mymusic.addMusic(this.courseForm.value)
       this.MusicMode=false;
     }
+    
     
         
       
