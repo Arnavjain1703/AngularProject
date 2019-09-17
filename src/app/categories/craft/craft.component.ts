@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseUser } from 'src/app/shared/courseuser.module';
-import { MyCraftService } from 'src/app/services/carft.service';
+import { CourseUserService } from 'src/app/courseuser.service';
 
 @Component({
   selector: 'app-craft',
@@ -11,11 +11,11 @@ export class CraftComponent implements OnInit {
 
   courses:CourseUser[];
 
-  constructor(private designService:MyCraftService) { }
+  constructor(private designService:CourseUserService) { }
  
 
  ngOnInit() {
-   this.courses=this.designService. getCraft();
+   this.courses=this.designService.getCoursesUser();
  }
 
 }

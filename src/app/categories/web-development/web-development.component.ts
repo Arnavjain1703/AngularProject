@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
  import { CourseUser } from 'src/app/shared/courseuser.module';
- import {  DevelopmentService } from 'src/app/development.service';
+import { CourseUserService } from 'src/app/courseuser.service';
 
 
 @Component({
@@ -11,11 +11,11 @@ import { Component, OnInit } from '@angular/core';
 export class WebDevelopmentComponent implements OnInit {
   courses:CourseUser[];
 
-   constructor(private developmentService:DevelopmentService) { }
+   constructor(private developmentService:CourseUserService) { }
   
 
   ngOnInit() {
-    this.courses=this.developmentService. getWebCourse();
+    this.courses=this.developmentService.getCoursesUser();
   }
 
 }

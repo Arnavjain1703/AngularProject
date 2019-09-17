@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Course } from 'src/app/shared/course.module';
+import { CourseUser } from 'src/app/shared/courseuser.module';
 
 @Component({
   selector: 'app-course-item',
@@ -8,7 +8,7 @@ import { Course } from 'src/app/shared/course.module';
 })
 export class CourseItemComponent implements OnInit {
 
-  @Input () course:Course;
+  @Input () course:CourseUser;
   @Input()index:number;
   constructor() { }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseUser } from 'src/app/shared/courseuser.module';
-import { MyDesignService } from 'src/app/services/designing.service';
+import { CourseUserService } from 'src/app/courseuser.service';
 
 @Component({
   selector: 'app-designing',
@@ -10,11 +10,11 @@ import { MyDesignService } from 'src/app/services/designing.service';
 export class DesigningComponent implements OnInit {
   courses:CourseUser[];
 
-  constructor(private designService:MyDesignService) { }
+  constructor(private designService:CourseUserService) { }
  
 
  ngOnInit() {
-   this.courses=this.designService. getDesign();
+   this.courses=this.designService. getCoursesUser();
  }
 
 }

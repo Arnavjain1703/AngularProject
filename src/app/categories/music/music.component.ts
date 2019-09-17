@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseUser } from 'src/app/shared/courseuser.module';
-import { MyMusicService } from 'src/app/services/music.service';
+import { CourseUserService } from 'src/app/courseuser.service';
 
 @Component({
   selector: 'app-music',
@@ -11,11 +11,11 @@ export class MusicComponent implements OnInit {
 
   courses:CourseUser[];
 
-  constructor(private musicService:MyMusicService) { }
+  constructor(private musicService:CourseUserService) { }
  
 
  ngOnInit() {
-   this.courses=this.musicService. getMusic();
+   this.courses=this.musicService.getCoursesUser();;
  }
 
 }

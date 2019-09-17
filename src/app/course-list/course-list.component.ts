@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Course } from '../shared/course.module';
+import { CourseUser } from '../shared/courseuser.module';
 import { CourseService } from '../course.service';
 import {Subscription} from 'rxjs';
 
@@ -12,7 +12,7 @@ import {Subscription} from 'rxjs';
 export class CourseListComponent implements OnInit  {
   show=false;
  subscription=Subscription;
-  courses:Course[];
+  courses:CourseUser[];
   constructor(private courseService:CourseService) { }
 
   ngOnInit() {
