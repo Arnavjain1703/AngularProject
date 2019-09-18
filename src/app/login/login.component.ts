@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl,Validators } from '@angular/forms';
+import { FormGroup,  NgForm } from '@angular/forms';
+import { ServerService } from '../server.service';
 
 @Component({
   selector: 'app-login',
@@ -7,25 +8,35 @@ import { FormGroup, FormControl,Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-loginForm1:FormGroup;
-loginForm2:FormGroup;
-  constructor() { }
+show=false;
+admiShow=false;
+  constructor(private serverService:ServerService) { }
 
   ngOnInit() {
-    let userMail="";
-    let userPassword="";
-    let adminPassword="";
-    let adminMail="";
-    this.loginForm1=new FormGroup({
-    'Email':new FormControl(userMail,[Validators.email,Validators.required]),
-     'password':new FormControl(userPassword,Validators.required),
-
-    });
-    this.loginForm2=new FormGroup({
-      'email':new FormControl(adminMail,[Validators.required,Validators.email]),
-       'Password':new FormControl(adminPassword,Validators.required)
-    });
-  }
+    
 }
 
+adminShow()
+{
+this.admiShow=true;
+this.show=false
+}
+userShow()
+{
+this.show=true;
+this.admiShow=false;
+}
 
+onSubmit(form:NgForm)
+{
+ const value = form.value;
+  console.log(JSON.stringify(form.value));
+  this.serverService. login(value.email,value.password,value.admin)
+  .subscribe(
+    (response) => console.log(response),
+    (error) => console.log(error),
+)
+  
+}
+
+}

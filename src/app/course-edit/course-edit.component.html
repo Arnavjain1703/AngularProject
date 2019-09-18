@@ -30,11 +30,23 @@
                     </div>
                 </div>
                 </div>
+                <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="videoPath">VIDEO  URL</label>
+                                <input type="text" id="videoPath" formControlName="videoPath" class="form-control" 
+                                #videoPath>
+                              
+                            </div>
+                        </div>
+                        </div>
+                      
             <div class="row">
                     <div class="col-xs-12">
                         <img [src]="imagePath.value" class="img-responsive">
                     </div>
             </div>
+            
             <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group">
@@ -53,18 +65,7 @@
 
                                 </div>
                     </div>
-                    <!-- <div class="btn-group"appDropdown>
-                        <button type="button"
-                         class="btn btn-primary dropdown-toggle">Choose Category<span class="caret"></span>
-                       </button>  -->
-                       <!-- <ul class="dropdown-menu">
-                         <li><a (click) ="onAddToWeb()"  style="cursor:pointer">WEB DEVELOPMENT</a></li>
-                         <li><a (click) ="onAddDesign()"style="cursor:pointer" >DESIGNING</a> </li>
-                         <li><a (click)="onAddCraft()" style="cursor:pointer" >ARTS AND CRAFT</a> </li>
-                         <li><a (click)="onAddMusic()" style="cursor:pointer">MUSIC</a> </li>  
-
-                       </ul>  
-                         -->
+                
 
     <input  type="radio" name="category" formControlName="category" value="WebDevelopment"> WEB DEVELOPMENT<br>
     <input  type="radio" name="category" formControlName="category" value="Designing">DESIGNING<br>

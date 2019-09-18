@@ -71,6 +71,7 @@ export class CourseEditComponent implements OnInit {
     let courseImagePath='';
     let coursePrice=0;
     let courseCategory='';
+    let courseVideoPath='';
     if(this.editMode)
     {
       const course=this.courseService.getCourse(this.id)
@@ -79,13 +80,16 @@ export class CourseEditComponent implements OnInit {
       courseImagePath=course.imagePath;
       coursePrice=course.price;
       courseCategory=course.category;
+      courseVideoPath=course.videoPath;
+
     }
     this.courseForm=new FormGroup({
       'name': new FormControl(courseName,Validators.required),
       'imagePath':new FormControl(courseImagePath,Validators.required),
       'description':new FormControl(courseDescription,Validators.required),
       'price':new FormControl(coursePrice,Validators.required),
-       'category':new FormControl(courseCategory)
+       'category':new FormControl(courseCategory),
+       'videoPath':new FormControl(courseVideoPath,Validators.required)
      
     })
   }

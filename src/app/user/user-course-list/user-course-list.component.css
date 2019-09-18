@@ -4,33 +4,23 @@
 }
 .offers{
      
-    animation: bgchange 1s infinite;
+    /* animation: bgchange 1s infinite;
+     */
+     color:#F4D03F  ;
     margin-bottom:20px;
 
 }
  
-@keyframes bgchange
-{
-  0%{
-      color:#145A32  ;
-  }
-  50%
-  {
-      color:#1B4F72  ;
-  }
-  100%
-  {
-      color:#58D68D  ;
-  } 
-  
 
-}
+
+
 .item
 {
     text-align:center;
     font-family: fantasy;
     font-size:50px;
-    background: #F4D03F 
+    background:#229DF0
+     ;
 
 }
 .set

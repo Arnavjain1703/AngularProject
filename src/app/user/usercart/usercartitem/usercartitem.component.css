@@ -23,7 +23,7 @@
  }
  
  .desc{
-     margin: 5%;
+     margin-bottom: 5%;
      text-align: center;
      font-family: cursive;
      background: #EAECEE ;
@@ -45,7 +45,9 @@
      height:200px ;width:50%;
      box-shadow:5px 5px 5px black;
  }
- 
+ hr{
+     border:2px solid black;
+ }
 
 
   

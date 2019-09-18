@@ -9,7 +9,7 @@ import { UserCartService } from 'src/app/usercart.service';
   styleUrls: ['./usercartitem.component.css']
 })
 export class UsercartitemComponent implements OnInit {
-  show=false;
+  
   @Input () course:CourseUser;
   @Input()index:number;
   constructor( private csservice:UserCartService,
@@ -18,10 +18,7 @@ export class UsercartitemComponent implements OnInit {
   ngOnInit() {
   }
 
-  shows()
-  {
-   this.show=!this.show;
-  }
+  
   onDelete()
   {
     this.csservice.deleteCraft(this.index);

@@ -7,26 +7,28 @@ H1
 {
     background:url( https://thumbs.dreamstime.com/b/pattern-school-related-items-seamless-sketch-like-illustration-books-pens-other-objects-studies-background-72319278.jpg);
      background-size:cover;
-     height:800px;
+     
 
     
+}
+.error
+{
+    color:red;
 }
 .userSignup,.adminSignup
 {
  text-align: center;
-  /* border: black  2px solid; */
   box-shadow:10px 10px 20px black;
 
  background:#EAECEE;
- border-radius:10%;
+ border-radius:5%;
 
 }
 .set
 {
     background: #EAECEE;
     
-    box-shadow:10px 10px 20px black;
-    /* border:solid black 2px; */
+    box-shadow:5px 5px 5px black;
     margin-bottom: 100px;
     
 }

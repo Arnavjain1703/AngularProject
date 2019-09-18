@@ -5,7 +5,7 @@
         <div class="container bgimg">
         <div class="row ">
         <div class="col-lg-2"></div>
-        <div class="col-lg-4 set anima" (click)="shows()" style="padding-left:0% ;height:100px">
+        <div class="col-lg-4 set anima" (mouseover)="shows()" (mouseout)="unshow()" style="padding-left:0% ;height:100px">
        
         <img style= "width:100%;height: 99px"
              
@@ -14,7 +14,7 @@
         class="img-responsive img "
          >
          </div>
-        <div class="col-lg-4 name set anima" (click)="shows()"style="height:100px" >
+        <div class="col-lg-4 name set anima"  style="height:100px" >
            <h1 style="font-family: Georgia, 'Times New Roman', Times, serif ;text-align:center">{{course.name}}</h1>
 
         </div>
@@ -33,8 +33,8 @@
       </div>
       
     </div>
-<div class="container">
-    <div class="desc" *ngIf="this.show"><div class="size"><u>{{course.name}}</u></div><div class="size">{{course.description}}</div>
+<div class="container" >
+    <div class="desc"><div class="size"><u>{{course.name}}</u></div><div class="size">{{course.description}}</div>
   <div style="text-align:center"> <img class="img2"
              
     [src]="course.imagePath" 
@@ -46,6 +46,7 @@
   
   
    </div>
+   <hr>
 </div>
     
            

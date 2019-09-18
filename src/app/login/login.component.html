@@ -8,47 +8,38 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-3 userLogin" >
-            <form [formGroup]="loginForm1" >
-            <h1>LOGIN AS USER</h1>
-        <hr>
-        
-        
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 userLogin" >
+         
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <h1>LOGIN</h1>
             <div class="form-group">
-                <label for="Email">EMAIL:</label>
-                <input formControlName="Email" type="email" class="form-control" id="Email">
-            </div>
-            <div class="form-group">
-            <label for="password">password</label>
-            <input  formControlName="password" type="password" id="password" class="form-control" >
-            </div>
-            <div class="button">
-        <button type="button" class="button"[disabled]="!loginForm1!.valid" routerLink="/usercourse/usercourselist" class="btn btn-success" >SUBMIT</button>
-            </div>
-    </form>
-
-    </div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-3 adminLogin" >
-            <form [formGroup]="loginForm2">
-            <h1>LOGIN AS ADMIN</h1>
-            <hr>
-            
-                <div class="form-group">
-                    <label for="email">EMAIL:</label>
-                    <input type="email"formControlName="email" class="form-control" id="email">
+                    <label for="email" >Mail</label>
+                    <input type="email" id="email" name="email" ngModel class="form-control" required email #email="ngModel">
+                    <span *ngIf="!email.valid && email.touched">PLEASE ENTER CORRECT EMAIL</span>
                 </div>
-                <div class="form-group">
-                        <label for="Password">password</label>
-                        <input type="Password" formControlName="Password" class="form-control" id="password" >
-                        </div>
-          <div class="button">
-            <button  type="button"  routerLink="/courselist" [disabled]="!loginForm2!.valid" class="btn btn-success" >SUBMIT</button>
-          </div>
-        </form>
+        <div class="form-group">
+                <label for="password" >PASSWORD</label>
+                <input type="password" id="password" name="password" ngModel class="form-control" required #password="ngModel">
+                <span *ngIf="!password.valid && password.touched">please enter password</span>
+            </div>
+    <p> CHOOSE HOW DO U WANT TO login UP</p>
+    <div class="form-group">
+    <input type="radio" name="admin" value=""ngModel class="form-control"  #admin="ngModel" >USER<br>
+    <input type="radio" name="admin" value="true" ngModel class="form-control" #admin="ngModel">instructor<br>
+    </div>
+            <div class="button">
+            <button class="btn btn-primary" (click)="adminShow()"  [disabled]="!f.valid" type="submit"
+             *ngIf="admin.value">Login</button>
+             <button class="btn btn-primary" (click)="userShow()"   [disabled]="!f.valid" type="submit"
+             *ngIf="!admin.value">Login</button>
+            </div>
+     </form>
+     </div>
+     <div class="col-lg-4 adjust"><button type="button" *ngIf="admiShow" routerLink="/courselist"class="proceed btn btn-success"><span class="glyphicon glyphicon-hand-right"></span>  POOCEED FURTHER</button>
+     <button type="button adjust" *ngIf="show" [routerLink]="['/usercourse','usercourselist']"class="proceed btn btn-success"><span class="glyphicon glyphicon-hand-right"></span>  POOCEED FURTHER</button></div>        
+
     </div>
     </div>
 </div>
 
-</div>

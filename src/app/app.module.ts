@@ -33,6 +33,8 @@ import { CraftItemComponent } from './categories/craft/craft-item/craft-item.com
 import { MusicComponent } from './categories/music/music.component';
 import { MusicItemComponent } from './categories/music/music-item/music-item.component';
 import { Header2Component } from './header2/header2.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ServerService } from './server.service';
 
 
 
@@ -71,9 +73,10 @@ import { Header2Component } from './header2/header2.component';
     ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
     
   ],
-  providers: [CourseService,CourseUserService,UserCartService,MyCourseService],
+  providers: [CourseService,CourseUserService,UserCartService,MyCourseService,ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

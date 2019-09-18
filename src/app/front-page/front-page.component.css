@@ -13,25 +13,31 @@
     padding-top: 15%;
     padding-left:15%;
     font-size:70px;
+    font-family: initial;
+    text-shadow: 2px 2px 2px black
 }
 .Pposition
 {
     padding-left:15%;
     font-size:40px;
-    color:white;
+    font-family: initial;
+    text-shadow: 2px 2px 4px black
+
+
 }
 .row
 {   
-    height:11%;
-    margin-right:0px;
-    
-    
+    height:12%;
+    margin-right:0px;    
     background-color: #EA1051;
 }
 .col-sm-4
 {
     text-align:center;
-    padding-top:4px;
+    
+    padding-top:20px;
+    font-size:20px;
+    
 }
 
 
@@ -51,16 +57,20 @@
 
 .content
 {
-    padding-left:30%;
+    padding-left:15%;
     padding-top:4%;
     color:white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px
 }
-
+ 
 .col-md-3
 {
     border:solid black 2px;
     text-align: center;
-}
+    font-family: cursive;
+    font-size:20px; 
+} 
 #catigory
 {
     background:  #F2F4F4 
@@ -70,9 +80,13 @@
     background: #EAECEE
 }
 
-.col-sm-4{
-    padding-top:30px;
-    font-size:20px;
-    border:solid 2px black;
 
+.mt
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.heading{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size:40px;
 }

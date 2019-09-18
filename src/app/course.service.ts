@@ -7,7 +7,7 @@ export class CourseService{
     coursesChanged=new Subject<CourseUser[]>();
 
 private courses: CourseUser[]=[
-    new CourseUser('web bootcamp','this course is for web development','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg', 446,'WebDevelopment'),
+    new CourseUser('web bootcamp','this course is for web development','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg', 446,'WebDevelopment','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg'),
 ]
 getCourses()
 {

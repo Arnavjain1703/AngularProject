@@ -1,12 +1,9 @@
-.userLogin,.adminLogin 
+.userLogin
  {
  text-align: center;
-  /* border: black  2px solid; */
   box-shadow:10px 10px 20px black;
  background:#EAECEE;
- border-radius:10%;
- 
-
+ border-radius:5%;
 }
 .row
 {
@@ -32,10 +29,20 @@ font-size: 400%;
 }
 .bg{
     text-align: center;
-    /* border: black 2px solid; */
-    box-shadow:15px 15px 50px black;
+    box-shadow:10px 10px 10px black;
     background:#EAECEE; 
 }
 input.ng-invalid.ng-touched{
     border:1px solid red;
+}
+.adjust
+{
+    text-align: center;
+    padding-top:60px;
+        
+
+}
+.proceed{
+    font-size: 20px;
+    font-family: cursive
 }

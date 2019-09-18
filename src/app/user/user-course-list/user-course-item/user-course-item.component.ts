@@ -12,7 +12,7 @@ import { MyCourseService } from 'src/app/mycourse.sercice';
    styleUrls: ['./user-course-item.component.css']
 })
 export class UserCourseItemComponent implements OnInit {
-    show=false;
+    
     add=false;
     buy=false;
     
@@ -37,8 +37,6 @@ export class UserCourseItemComponent implements OnInit {
         this.mcService.addMyCourseUser(this.course);
         this.buy=true;
   }
-  shows()
-  {
-   this.show=!this.show;
-  }
+  
+  
 }
