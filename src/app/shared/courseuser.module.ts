@@ -1,21 +1,27 @@
 export class CourseUser
 {
-    public name:string;
-    public description:string;
-    public imagePath:string;
+    public courseName:string;
+    public courseDetail:string;
+    public imageUrl:string;
     public price :number;
     public category:string;
-    public videoPath:string;
+    public courseUrl:string;
+    public courseId:number;
+    public userId :string;
+
     
 
-    constructor(name:string,desc:string,imagePath:string,price:number,category:string,videoPath :string)
+    constructor(courseId:number,courseName:string,category:string,courseDetails:string,price:number,courseUrl:string,imageUrl:string,userId:string)
     {
-        this.name=name;
-        this.description=desc;
-        this.imagePath=imagePath;
+        this.courseName=courseName;
+        this.courseDetail=courseDetails;
+        this.imageUrl=imageUrl;
         this.price=price;
         this.category=category;
-        this.videoPath=videoPath;
+        this.courseUrl=courseUrl;
+        this.userId =userId;
+        this.courseId=courseId;
+         
         
     }
 }

@@ -2,7 +2,6 @@ import { Component, OnInit ,Input} from '@angular/core';
 import { CourseUser } from 'src/app/shared/courseuser.module';
 import { MyCourseService } from 'src/app/mycourse.sercice';
 import { UserCartService } from 'src/app/usercart.service';
- 
 @Component({
   selector: 'app-usercartitem',
   templateUrl: './usercartitem.component.html',
@@ -15,6 +14,7 @@ export class UsercartitemComponent implements OnInit {
   constructor( private csservice:UserCartService,
               private myCourse:MyCourseService) { }
 
+  descrip=false;
   ngOnInit() {
   }
 
@@ -26,5 +26,9 @@ export class UsercartitemComponent implements OnInit {
   onAddToMyCourse()
   {
     this.myCourse.addMyCourseUser(this.course)
+  }
+  description()
+  {
+     this.descrip=!this.descrip;
   }
 }

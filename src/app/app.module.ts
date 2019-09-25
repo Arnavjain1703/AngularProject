@@ -32,9 +32,10 @@ import { CraftComponent } from './categories/craft/craft.component';
 import { CraftItemComponent } from './categories/craft/craft-item/craft-item.component';
 import { MusicComponent } from './categories/music/music.component';
 import { MusicItemComponent } from './categories/music/music-item/music-item.component';
-import { Header2Component } from './header2/header2.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServerService } from './server.service';
+import { AuthGuard } from './auth.guard';
+import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validators.directive';
 
 
 
@@ -64,7 +65,7 @@ import { ServerService } from './server.service';
     CraftItemComponent,
     MusicComponent,
     MusicItemComponent,
-    Header2Component,
+    ConfirmEqualValidatorDirective
     
   
   ],
@@ -76,7 +77,8 @@ import { ServerService } from './server.service';
     HttpClientModule
     
   ],
-  providers: [CourseService,CourseUserService,UserCartService,MyCourseService,ServerService],
+  providers: [CourseService,CourseUserService,UserCartService,MyCourseService,ServerService,AuthGuard,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

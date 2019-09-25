@@ -21,15 +21,17 @@ onSubmit(form:NgForm)
 this.display=true;
   const value = form.value;
   console.log(JSON.stringify(form.value));
-  this.serverService. signUp(value.firstName,value.lastName,value.email,value.password,value.admin)
+  this.serverService. signUp(value.firstName,value.lastName,value.email,value.password,value.admin,value.confirmPassword)
   .subscribe(
-    (response) => console.log(response),
-    (error) => console.log(error),
+    (response) =>
+    {
+      console.log(response)
+    },
+    (error) => console.log(error)
   
   )
 
 form.reset();
   
 }
-
 }

@@ -1,8 +1,18 @@
 .heading
 {
     text-align: center;
-    font-size:  60px;
+    font-size:  40px;
     font-family: cursive;
-    border-bottom: 4px solid black;
-    border-top:4px solid black;
+}
+.background
+{
+    background: url(https://img.freepik.com/free-photo/assortment-various-craft-items-wooden-background_23-2147898984.jpg?size=626&ext=jpg)
+    ;height:300px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin-bottom:40px;
+}
+.bgcolor
+{
+    background:#82E0AA;
 }

@@ -1,51 +1,32 @@
- 
-    <div class="row" style=" margin: 20px">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-4 set anima"  style="padding-left:0% ;height:100px">
-   
-    <img style= "width:100%;height: 99px"
-         
-     [src]="course.imagePath" 
-    alt="{{course.name}}" 
-    class="img-responsive img "
-     >
-     </div>
-    <div class="col-lg-4 name set anima"style="height:100px" >
-       <h1 style="font-family: Georgia, 'Times New Roman', Times, serif ;text-align:center">{{course.name}}</h1>
-
-    </div>
-    <div class="col-lg-2 "> 
-        <span class="glyphicon glyphicon-hand-right"></span> <a class="btn btn-danger" (click)="onDelete()" style="cursor:pointer"><span class="glyphicon glyphicon-trash"></span>   X</a>
-        <br>
-        <br>
-        
-        <div *ngIf="!buy" >
-        <span class="glyphicon glyphicon-hand-right"> </span> <a  (click)="onAddToMyCourse()"  class="btn btn-primary"style="cursor:pointer"> 
-         <span class="glyphicon glyphicon-shopping-cart"></span>Byu course</a>
-         </div>
-         <div *ngIf="buy"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div></div>
-  
-  
+ <div class="container" (click)="description()" >
+    <div class="desc"><div class="size"><u>{{course.name}}</u></div>
+    <div style="text-align:center"> <img class="img2"
+    [src]="course.imagePath" 
+    alt="{{course.name}}" >
   </div>
+    <div class="size">{{course.price}} Rs</div>
+    <div class="row">
+      <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+        <span class="glyphicon glyphicon-hand-right"></span> <a class="btn btn-danger" (click)="onDelete()" style="cursor:pointer"><span class="glyphicon glyphicon-trash"></span>   X</a>
+        </div>
+        
+        <div class="col-lg-3">
+             
+          <div *ngIf="!buy" >
+          <span class="glyphicon glyphicon-hand-right"> </span> <a  (click)="onAddToMyCourse()"  class="btn btn-primary"style="cursor:pointer"> 
+          <span class="glyphicon glyphicon-shopping-cart"></span>Buy course</a>
+          </div>
+
+         <div *ngIf="buy"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div>
+        </div>
+        <div class="col-lg-3"></div>
+      </div>
+     <div *ngIf="descrip" class="size">{{course.description}}</div>
+     </div>
+  </div>
+      
+             
+           
   
-
-<div class="container">
-<div class="desc" ><div class="size"><u>{{course.name}}</u></div><div class="size">{{course.description}}</div>
-<div style="text-align:center"> <img class="img2"
-         
-[src]="course.imagePath" 
-alt="{{course.name}}" 
-
-></div>
-<div class="size">{{course.price}} Rs</div>
-
-
-
-</div>
-<hr>
-</div>
-
-       
-     
-
-
+  

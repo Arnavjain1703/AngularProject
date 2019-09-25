@@ -13,10 +13,12 @@ import { CraftComponent } from './categories/craft/craft.component';
 import { DesigningComponent } from './categories/designing/designing.component';
 import { MusicComponent } from './categories/music/music.component';
 import { SignupComponent } from './signup/signup.component';
+import { AuthGuard } from './auth.guard';
 
 const appRoutes: Routes=[
     {path:'',redirectTo: 'frontpage', pathMatch:'full'}, 
-    {path: 'courselist', component:CourseListComponent},
+    {path: 'courselist', component:CourseListComponent,
+     canActivate:[AuthGuard]},
     {path:'courselist/:id/edit',component:CourseEditComponent},
     {path:'new',component:CourseEditComponent},
     {path:'login',component:LoginComponent},

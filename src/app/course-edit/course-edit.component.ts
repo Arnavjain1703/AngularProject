@@ -14,11 +14,12 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class CourseEditComponent implements OnInit {
   id:number;
   editMode=false;
-  
+
   courseForm:FormGroup;
 
   constructor( private courseService:CourseService,
               private courseUserService:CourseUserService,
+              
 
                private route:ActivatedRoute,
                private router:Router) { }
@@ -27,11 +28,16 @@ export class CourseEditComponent implements OnInit {
     this.route.params.subscribe( (params:Params)=>{
       this.id=+params['id'];
       this.editMode=params['id'] !=null;
-      this.initForm();
-
+      this.initForm();});
+      // this.dataStorageService.getCourses()
+      // .subscribe(Response=>{
+      //   this.courses=Response;
+      // })
+     
+      
       
 
-    });
+    
   }
   onCancle()
   {
@@ -47,9 +53,7 @@ export class CourseEditComponent implements OnInit {
   onSubmit()
   {
     
-    
-        
-      
+  
     
     if(this.editMode)
     {
@@ -75,12 +79,12 @@ export class CourseEditComponent implements OnInit {
     if(this.editMode)
     {
       const course=this.courseService.getCourse(this.id)
-      courseName=course.name;
-      courseDescription=course.description;
-      courseImagePath=course.imagePath;
+      courseName=course.courseName;
+      courseDescription=course.courseDetail;
+      courseImagePath=course.imageUrl;
       coursePrice=course.price;
       courseCategory=course.category;
-      courseVideoPath=course.videoPath;
+      courseVideoPath=course.courseUrl;
 
     }
     this.courseForm=new FormGroup({

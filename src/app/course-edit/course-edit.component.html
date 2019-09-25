@@ -6,7 +6,7 @@
         <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-xs-12">
-                    <button type="submit"[disabled]="!courseForm.valid" class="btn btn-success">Save</button>
+                    <button type="submit" [disabled]="!courseForm.valid" routerLink="/courselist" class="btn btn-success">Save</button>
                     <button type="button" (click)="onCancle()"class="btn btn-danger">Cancle</button>
                     <button type="button" *ngIf="this.editMode"(click)="onDelete()" class="btn btn-danger">Delete</button>
                 </div>

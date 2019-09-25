@@ -1,8 +1,4 @@
 
-
-
-
-
 .set
 {
     background:rgb(232, 233, 233);
@@ -10,9 +6,7 @@
     box-shadow:5px 5px 10px black; 
     
 }
-.anima:hover{
-    animation: change 1s;
-}
+
 
 .glyphicon
 {
@@ -35,12 +29,7 @@
    
 }
 
-@keyframes change
-{
 
-from{ box-shadow:5px 5px 10px black}
-    to{ box-shadow:10px 10px 15px black};
-}
 .size{
     font-size: 200%
 }

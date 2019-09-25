@@ -1,10 +1,4 @@
 
-
-.play
-{
-    
-    padding-left:110px;
-}
 .set
 {
     background:rgb(232, 233, 233);
@@ -37,12 +31,6 @@
    
 }
 
-@keyframes change
-{
-
-from{ box-shadow:5px 5px 10px black}
-    to{ box-shadow:10px 10px 15px black};
-}
 .size{
     font-size: 200%
 }
@@ -50,6 +38,14 @@ from{ box-shadow:5px 5px 10px black}
     height:200px ;width:50%;
     box-shadow:5px 5px 5px black;
 }
-hr{
-    border:2px solid black;
+
+.length
+{    margin-top:20px;
+    margin-left:300px;
+    margin-right:300px;
+    margin-bottom:20px;
+}   
+.play
+{
+    font-size:50px;
 }

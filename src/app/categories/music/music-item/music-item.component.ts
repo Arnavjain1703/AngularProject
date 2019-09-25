@@ -28,5 +28,6 @@ export class MusicItemComponent implements OnInit {
   {
    this.show=!this.show;
   }
+  
 
 }

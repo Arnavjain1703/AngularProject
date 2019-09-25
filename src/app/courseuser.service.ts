@@ -3,11 +3,11 @@ import { CourseUser } from './shared/courseuser.module';
 
 
 
-export class CourseUserService{
-    coursesUserChanged=new Subject<CourseUser[]>();
+export class CourseUserService {
+    coursesUserChanged=new Subject<CourseUser[ ]>();
 
 private courses: CourseUser[]=[
-    new CourseUser('web bootcamp','this course is for web development','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg', 446,'WebDevelopment','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg')
+
 ]
 
 
@@ -36,5 +36,13 @@ deleteCourseUser(index:number){
 
 
 }
+setCourses(courses:CourseUser[])
+{
+    console.log(courses);
+   this.courses=courses;
+ this.coursesUserChanged.next(this.courses.slice());
+
+}
+
 
 }

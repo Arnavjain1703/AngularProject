@@ -8,15 +8,16 @@ import { CourseUser } from 'src/app/shared/courseuser.module';
 })
 export class MycourseItemComponent implements OnInit {
   show=false;
+  descrip=false
   @Input () course:CourseUser;
   @Input()index:number;
   constructor() { }
 
   ngOnInit() {
   }
-  shows()
+  description()
   {
-   this.show=!this.show;
+     this.descrip=!this.descrip;
   }
 
 }
