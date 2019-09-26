@@ -1,54 +1,47 @@
-.userLogin
- {
- text-align: center;
-  box-shadow:10px 10px 20px black;
- background:#EAECEE;
- border-radius:5%;
- margin-top:20px;
-}
+
 
 .bgImg
 {               
       height:750px;
       background:#82E0AA;     
-     top:0;  
+
 } 
-.button
+
+.background
 {
-    padding-bottom: 30px;
-}
-h2{
-     text-align: center;
-     font-size: 60px;
-      color:#2C3E50 ;
-}
-.bg{
-    text-align: center;
-    margin-top:30px;  
-    
+    background:white;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    box-shadow: 4px 4px 4px black;
+    margin-top:150px;
 
 }
-.size
+.col-lg-6
 {
-    width:400px;
-    height: 400px;
-    padding-top:70px;
-    padding-right: 100px;
+    text-align: center;
+    padding:40px;
+}
+.family
+{
+    font-family: cursive;
+}
+img
+{   
+    margin-top:80px;
+    margin-left:10px;
+    height:300px;
+    width: 400px;
+}
+
+.form{
+    background:#4286FF;
+}
+
+error 
+{
+    color:red;
 }
 input.ng-invalid.ng-touched{
-    border:1px solid red;
-}
-.adjust
-{
-    text-align: center;
-    padding-top:60px;
-        
-
-}
-.proceed{
-    font-size: 20px;
-}
-
-.family{
-    font-family: cursive;
+    border:4px solid red;
 }

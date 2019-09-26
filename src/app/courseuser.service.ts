@@ -7,9 +7,8 @@ export class CourseUserService {
     coursesUserChanged=new Subject<CourseUser[ ]>();
 
 private courses: CourseUser[]=[
-
+    new CourseUser( 233233,'A test Recipe','bvdfd','this is simple test,',83247,'rfnmrjkenrfekjnf','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg','bncafjnvckdfk')
 ]
-
 
 getCoursesUser()
 {

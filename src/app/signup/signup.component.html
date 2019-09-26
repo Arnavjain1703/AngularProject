@@ -1,98 +1,100 @@
+
+
 <div class="bgImg">
-   <app-header></app-header>
-    <div class="margin">
-   <div class="container family">  <h1>GET YOURSELF REGISTERED</h1></div>
-   <div *ngIf="display" class="family "style="text-align:center"><h1>YOU REGISTERAD SUCCESSFULLY</h1></div>
+        <app-header></app-header>
 
-   <div class="row" >
-   <div class="col-lg-4"></div>
-   <div class="col-lg-4 userSignup">
-   <h2 class="family">SIGNUP</h2>
-   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <div class="form-group" [class.has-error]="firstName.touched && firstName.invalid">
-        <label for="first-name"  class="family">FIRST NAME</label>
-        <input 
-        type="first-name" 
-        id="first-name"
-         placeholder="FIRSTNAME"
-         name="firstName"
-         ngModel class="form-control" 
-        #firstName="ngModel" 
-          required>
-        <span class="help-block family" *ngIf="!firstName.valid && firstName.touched">PLEASE ENTER FIRST NAME</span>
-    </div>
-     <div class="form-group" 
-     [class.has-error]="lastName.touched && lastName.invalid">
-        <label for="last-name" class="family" >LAST NAME</label>
-        <input 
-        type="last-name" 
-        id="last-name" name="lastName" 
-         placeholder="LASTNAME"
-         ngModel class="form-control" 
-         required
-          #lastName="ngModel"
-           required>
-        <span  class="help-block family "*ngIf="!lastName.valid && lastName.touched">PLEASE ENTER LAST NAME</span> 
-    </div>
-    <div class="form-group" [class.has-error]="email.touched && email.invalid">
-        <label for="help-block" class="family" >EMAIL</label>
-        <input 
-        type="email"
-         id="email"
-          name="email"
-           placeholder="EMAIL"
-           ngModel
-           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
-           class="form-control" 
-           required 
-           email
-            #email="ngModel">
-        <span class="help-block family" *ngIf="!email.valid && email.touched">PLEASE ENTER CORRECT EMAIL</span>
+
+
+<div class="container">
+    <div class="row background">
+
+        <div class="col-lg-6  "><img src="https://greekss.com/images/signup.png"></div>
+ 
+        <div class="col-lg-6 form" >
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+        <h2 class="family">SIGN UP</h2>
+            <div class="form-group" [class.has-error]="firstName.touched && firstName.invalid">
+                    <label for="first-name"  class="family">FIRST NAME</label>
+                    <input 
+                    type="first-name" 
+                    id="first-name"
+                     placeholder="FIRSTNAME"
+                     name="firstName"
+                     ngModel class="form-control" 
+                    #firstName="ngModel" 
+                      required>
+                    <span class="help-block family" *ngIf="!firstName.valid && firstName.touched">PLEASE ENTER FIRST NAME</span>
+                </div>
+                 <div class="form-group" 
+                 [class.has-error]="lastName.touched && lastName.invalid">
+                    <label for="last-name" class="family" >LAST NAME</label>
+                    <input 
+                    type="last-name" 
+                    id="last-name" name="lastName" 
+                     placeholder="LASTNAME"
+                     ngModel class="form-control" 
+                     required
+                      #lastName="ngModel"
+                       required>
+                    <span  class="help-block family "*ngIf="!lastName.valid && lastName.touched">PLEASE ENTER LAST NAME</span> 
+                </div>
+                <div class="form-group" [class.has-error]="email.touched && email.invalid">
+                    <label for="help-block" class="family" >EMAIL</label>
+                    <input 
+                    type="email"
+                     id="email"
+                      name="email"
+                       placeholder="EMAIL"
+                       ngModel
+                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                       class="form-control" 
+                       required 
+                       email
+                        #email="ngModel">
+                    <span class="help-block family" *ngIf="!email.valid && email.touched">PLEASE ENTER CORRECT EMAIL</span>
+                 </div>
+                 <div class="form-group" [class.has-error]="password.touched && password.invalid">
+                    <label for="password" class="family" >PASSWORD</label>
+                    <input type="password" id="password" [minlength]='6' placeholder="password" name="password" ngModel class="form-control" required #password="ngModel">
+                    <span  class="help-block family"*ngIf="!password.valid && password.errors?.required">PLEASE ENTER  PASSWORD OF MINIMUM 6 CHARACTERS</span>
+                </div>
+                <div class="form-group" [class.has-error]="confirmPassword.touched && confirmPassword.invalid">
+                    
+                    <label for="confirmPassword" class="family" >CONFIRM PASSWORD</label>
+                    
+                    <input type="password" appConfirmEqualValidator="password" id="confirmPassword"  
+                     name="confirmPassword" placeholder="CONFIRM PASSWORD"
+                     ngModel class="form-control"
+                     required #confirmPassword="ngModel">
+            
+                    <span  class="help-block family" *ngIf="!confirmPassword.valid && confirmPassword.errors?.required">
+                        CONFIRM PASSWORD IS REQUIRED</span>
+                    <span  class="help-block family "*ngIf="!confirmPassword.valid && confirmPassword.errors?.notEqual">
+                        PASSWORD AND CONFIRM PASSWORD DOSE NOT MATCH</span>
+                     
+                </div>
+               <p class="family"> CHOOSE HOW DO U WANT TO SIGN UP</p>
+               <div class="form-group">
+                <div class="row">
+               <div class="col-lg-3"></div>
+               <div class="col-lg-3 family">
+               <input type="radio" name="admin" value=""  ngModel class="form-control"  #admin="ngModel">STUDENT<br>
+               </div> 
+               <div class="col-lg-3 family">   
+               <input type="radio" name="admin" value="true" ngModel class="form-control" #admin="ngModel">INSTRUCTOR<br>
+               </div>
+               <div class="col-lg-3 family"></div>
+               </div>
+                <div class="button"> 
+                <button class="btn btn-primary family" [disabled]="!f.valid" type="submit"  >SIGN UP</button>
+                </div>
+                </div>            
+     </form>
+     
      </div>
-     <div class="form-group" [class.has-error]="password.touched && password.invalid">
-        <label for="password" class="family" >PASSWORD</label>
-        <input type="password" id="password" [minlength]='6' placeholder="password" name="password" ngModel class="form-control" required #password="ngModel">
-        <span  class="help-block family"*ngIf="!password.valid && password.errors?.required">PLEASE ENTER  PASSWORD OF MINIMUM 6 CHARACTERS</span>
-    </div>
-    <div class="form-group" [class.has-error]="confirmPassword.touched && confirmPassword.invalid">
-        
-        <label for="confirmPassword" class="family" >CONFIRM PASSWORD</label>
-        
-        <input type="password" appConfirmEqualValidator="password" id="confirmPassword"  
-         name="confirmPassword" placeholder="CONFIRM PASSWORD"
-         ngModel class="form-control"
-         required #confirmPassword="ngModel">
-
-        <span  class="help-block family" *ngIf="!confirmPassword.valid && confirmPassword.errors?.required">
-            CONFIRM PASSWORD IS REQUIRED</span>
-        <span  class="help-block family "*ngIf="!confirmPassword.valid && confirmPassword.err0ors?.notEqual">
-            PASSWORD AND CONFIRM PASSWORD DOSE NOT MATCH</span>
-         
-    </div>
-   <p class="family"> CHOOSE HOW DO U WANT TO SIGN UP</p>
-   <div class="form-group">
-    <div class="row">
-   <div class="col-lg-3"></div>
-   <div class="col-lg-3 family">
-   <input type="radio" name="admin" value=""  ngModel class="form-control"  #admin="ngModel">STUDENT<br>
-   </div> 
-   <div class="col-lg-3 family">   
-   <input type="radio" name="admin" value="true" ngModel class="form-control" #admin="ngModel">INSTRUCTOR<br>
-   </div>
-   <div class="col-lg-3 family"></div>
-   </div>
-    <div class="button"> 
-    <button class="btn btn-primary family" [disabled]="!f.valid" type="submit"  >SIGN UP</button>
+     
+     </div>
     </div>
     </div>
 
-    </form>
-
-</div>
-<div class="col-lg-4"><img src="
-    https://www.sccpre.cat/mypng/full/456-4563857_picture-of-a-cartoon-computer-laptop-cartoon-images.png"></div>
-</div>
-
-</div>
-
-</div>

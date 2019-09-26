@@ -13,7 +13,7 @@ export class UserCartService{
   } 
   addCourse(course:CourseUser){
     this.courses.push(course);
-    //  this.cartChanged.next(this.courses.slice());
+     this.cartChanged.next(this.courses.slice());
 }
 deleteCraft(index:number)
 {
@@ -21,6 +21,11 @@ deleteCraft(index:number)
    this.cartChanged.next(this.courses.slice())
     
 
+}
+setCourses(courses:CourseUser[])
+{
+  this.courses=courses;
+  this.cartChanged.next(this.courses.slice())
 }
 
 }

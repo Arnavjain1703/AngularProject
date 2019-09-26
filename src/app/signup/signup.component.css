@@ -1,4 +1,4 @@
-H1
+/* H1
 {
     text-align: center;
     font-size:40px;
@@ -36,15 +36,7 @@ H1
 padding-bottom: 10px;
 
 }
-input.ng-invalid.ng-touched
-{
-    border:red solid 1px;
-}
 
-.family
-{
-    font-family: cursive;
-}
 
 .margin
 {
@@ -55,4 +47,52 @@ input.ng-invalid.ng-touched
 img{
     height:200px;
      padding-top: 70px;
+} */
+
+
+
+.bgImg
+{               
+      height:750px;
+      background:#82E0AA;     
+
+} 
+
+.background
+{
+    background:white;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    box-shadow: 4px 4px 4px black;
+    margin-top:50px;
+
+}
+.col-lg-6
+{
+    text-align: center;
+    padding:40px;
+}
+.family
+{
+    font-family: cursive;
+}
+img
+{   
+    margin-top:80px;
+    margin-left:10px;
+    height:300px;
+    width: 400px;
+}
+
+.form{
+    background:#FFDD48;
+}
+
+error 
+{
+    color:red;
+}
+input.ng-invalid.ng-touched{
+    border:4px solid red;
 }

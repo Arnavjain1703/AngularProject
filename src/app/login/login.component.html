@@ -2,71 +2,50 @@
 <div class="bgImg">
         <app-header></app-header>
 
-<div class="container bg">
 
-<div><h2 class="family">LOGIN YOURSELF AND GET STARTED</h2></div>
-</div>
+
 <div class="container">
-    <div class="row">
-        <div class="col-lg-4 "> 
-            <img class="size" src="  https://img.123clipartpng.com/pencil-clipartpencil-clipart-hd-3000_4000.png">
-            </div>
+    <div class="row background">
+
+        <div class="col-lg-6  "><img src="https://ak4.picdn.net/shutterstock/videos/15776284/thumb/3.jpg"></div>
  
-        <div class="col-lg-4 userLogin" >
-         
+        <div class="col-lg-6 form" >
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <h1 class="family">Welcome Back</h1>
+
         <h1 class="family">LOGIN</h1>
             <div class="form-group">
-                    <label for="email" class="family" >Mail</label>
-                    <input type="email" id="email" name="email" ngModel class="form-control" required email #email="ngModel">
-                    <span class="family" *ngIf="!email.valid && email.touched">PLEASE ENTER CORRECT EMAIL</span>
+                    <label for="email" class="family" ><h3>E-Mail</h3></label>
+                    <input type="email" 
+                    id="email"
+                     name="email" 
+                     ngModel class="form-control"
+                      required email 
+                      #email="ngModel"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+           >
+                    <span class="family error" *ngIf="!email.valid && email.touched">PLEASE ENTER CORRECT EMAIL</span>
                 </div>
         <div class="form-group">
-                <label for="password" class="family" >PASSWORD</label>
+                <label for="password" class="family" ><h3>PASSWORD</h3></label>
                 <input type="password"  
                 id="password"
                  name="password"
                   ngModel class="form-control"
                    required
+                   [minlength]=7
                     #password="ngModel">
-                <span *ngIf="!password.valid && password.touched">please enter password</span>
+                <span class="family error" *ngIf="!password.valid && password.touched">PLEASE ENTER PASSWORD OF MINIMUM LENGTH 7</span>
             </div>
-    <p class="family"> CHOOSE HOW DO U WANT TO login UP</p>
-        <div class="row">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-3 family">
-                  <input type="radio" name="admin"  value="" ngModel class="form-control"  #admin="ngModel" >user
-            </div>
-            <div class="col-lg-3 family">
-               <input type="radio" name="admin" value="true" ngModel class="form-control" #admin="ngModel">instructor<br>
-            </div>  
-            <div class="col-lg-3"></div>
-        </div>
-            
-    <div class="button">
-    <button class="btn btn-primary family" (click)="adminShow()"  [disabled]="!f.valid" type="submit"
-     *ngIf="admin.value" >Login</button>
-    <button class="btn btn-primary family" (click)="userShow()"   [disabled]="!f.valid" type="submit"
-    *ngIf="!admin.value" >Login</button>
-    </div>
+                        
+                       <button type="submit" class="btn btn-success">LOGIN</button>
+    <div><h3 class="family">NEW USER <a routerLink="/signup" style="COLOR:YELLOW">CREAT ACCOUNT</a></h3></div>
+
      </form>
-     <div><p class="family">DO NOT REGISTERED YET?<a routerLink="/signup">SIGNUP</a></p></div>
-
+     
      </div>
-     <div class=col-lg-4></div>
-    </div>
-     <div class=" adjust"><button 
-        type="button" 
-        *ngIf="admiShow"
-         [disabled]="!serverService.loggedIn()"
-         routerLink="/courselist"
-         class="proceed btn btn-success family">
-         <span class="glyphicon glyphicon-hand-right">
-
-         </span>   POOCEED FURTHER</button>
-     <button type="button adjust" *ngIf="show" [disabled]="!serverService.loggedIn()" [routerLink]="['/usercourse','usercourselist']"class="proceed btn btn-success family"><span class="glyphicon glyphicon-hand-right"></span>     POOCEED FURTHER</button></div>        
-
-    
+     
+     </div>
     </div>
     </div>
 
