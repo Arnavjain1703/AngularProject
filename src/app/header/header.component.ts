@@ -8,6 +8,7 @@ import { ServerService } from '../server.service';
 })
 export class HeaderComponent implements OnInit {
    email:any;
+   active=false;
   constructor( private serverService:ServerService) { }
 
   ngOnInit() {
@@ -18,5 +19,8 @@ export class HeaderComponent implements OnInit {
   {
     this.serverService.loggout();
   }
-
+   activate()
+   {
+     this.active=true;
+   }
 }

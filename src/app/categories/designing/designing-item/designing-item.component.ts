@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { CourseUser } from 'src/app/shared/courseuser.module';
 import { UserCartService } from 'src/app/usercart.service';
 import { MyCourseService } from 'src/app/mycourse.sercice';
+import { CourseService } from 'src/app/course.service';
 
 @Component({
   selector: 'app-designing-item',
@@ -16,7 +17,9 @@ export class DesigningItemComponent implements OnInit {
         ) { }
 
   ngOnInit() {
+      console.log( this.course.category)
   }
+
   onAddToCart(){
   this.acService.addCourse(this.course);
   }

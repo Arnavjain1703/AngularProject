@@ -1,4 +1,5 @@
-<div  (click)="description()" >
+<div  (click)="description()" *ngIf="course.category == 'Music'">
+  <div  (click)="description()"  >
     <div class="desc"><div class="size"><u>{{course.name}}</u></div>
     <div style="text-align:center"> <img class="img2"
     [src]="course.imagePath" 

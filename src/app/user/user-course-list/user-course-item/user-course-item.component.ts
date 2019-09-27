@@ -42,6 +42,7 @@ export class UserCourseItemComponent implements OnInit {
   {
         this.mcService.addMyCourseUser(this.course);
         this.buy=true;
+        this.serverService. userCourse(this.course.courseId)
   }
   description()
   {

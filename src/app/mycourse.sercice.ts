@@ -1,8 +1,11 @@
 import { CourseUser } from './shared/courseuser.module';
+import { Subject } from 'rxjs';
 
 
 export class MyCourseService
-{
+{   
+    MyCourseChanged=new Subject<CourseUser[ ]>();
+
     private courses: CourseUser[]=[
         
     ]
@@ -13,6 +16,12 @@ export class MyCourseService
     addMyCourseUser(course:CourseUser)
 {
  this.courses.push(course);
-//  this.coursesUserChanged.next(this.courses.slice())
+  this.MyCourseChanged.next(this.courses.slice())
 }
+     setCourses(courses:CourseUser[])
+     {
+         this.courses=courses;
+         this.MyCourseChanged.next(this.courses.slice())
+          
+     }
 }

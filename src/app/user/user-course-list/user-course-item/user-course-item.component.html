@@ -1,37 +1,53 @@
- <div  (mouseover)="description()" (mouseout)="undescription()" >
-  <div class="desc"><div class="size"><u>{{course.courseName}}</u></div>
-  <div style="text-align:center"> <img class="img2"
+
+ <div class="row highlight"  (mouseover)="description()" (mouseout)="undescription()">
+ <div class="col-lg-5">
+  <img class="img2"
   [src]="course.imageUrl" 
   alt="{{course.courseName}}" >
-</div>
-  <div class="size">{{course.price}} Rs</div>
-  <div class="row">
-      <div class="col-lg-6">
-           <div *ngIf="!add && serverService.loggedIn() ">
-           <span class="glyphicon glyphicon-hand-right"></span> <a  class="btn btn-primary" (click)="onAddToCart()" style="cursor:pointer">    <span class="glyphicon glyphicon-heart-empty"></span>  ADD TO CART</a>
-           </div>
-           <div *ngIf="!serverService.loggedIn() ">
-            <span class="glyphicon glyphicon-hand-right"></span> <a  routerLink="/login" class="btn btn-primary"  style="cursor:pointer">    <span class="glyphicon glyphicon-heart-empty"></span>  ADD TO CART</a>
-            </div>
-            
-           <div *ngIf="add"><span class="glyphicon glyphicon-heart"></span ><span>added to cart</span></div>
-           </div>
-          <div class="col-lg-6">
-            <div *ngIf="!buy && serverService.loggedIn()" >
-              <span class="glyphicon glyphicon-hand-right"> </span> <a  (click)="onAddToMyCourse()"  class="btn btn-primary"style="cursor:pointer"> 
-              <span class="glyphicon glyphicon-shopping-cart"></span>Buy course</a>
-             </div>
-             <div *ngIf="!serverService.loggedIn()" >
-              <span class="glyphicon glyphicon-hand-right"> </span> <a  routerLink="/login"  class="btn btn-primary"style="cursor:pointer"> 
-              <span class="glyphicon glyphicon-shopping-cart"></span>Buy course</a>
-             </div>
-       <div *ngIf="buy"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div>
+ </div>
+ <div class="col-lg-3">
+  <h3 class="family size"><u>{{course.courseName}}</u></h3>
+  <h3 class="family size"><u>{{course.price}} RS</u></h3>
+ </div>
+  
+  <div class="col-lg-4">
+    <div *ngIf="!add && serverService.loggedIn() " >
+      <span class="glyphicon glyphicon-hand-right"></span> 
+      <a  class="btn btn-primary  button family"
+       (click)="onAddToCart()" 
+       style="cursor:pointer"> 
+         <span class="glyphicon glyphicon-heart-empty"></span>   ADD TO CART</a>
       </div>
-    </div>
-   <div *ngIf="descrip" class="size">{{course.courseDetail}}</div>
-   </div>
-</div> 
-    
-           
+      <div *ngIf="!serverService.loggedIn() ">
+       <span 
+       class="glyphicon glyphicon-hand-right">
+      </span> 
+      <a  routerLink="/login"
+       class="btn btn-primary button family" 
+        style="cursor:pointer">  
+          <span class="glyphicon glyphicon-heart-empty"></span>
+             ADD TO CART</a>
+       </div>
+       
+      <div *ngIf="add" class="text"><span class="glyphicon glyphicon-heart"></span ><span class="family ">   added to cart</span></div>
+      <div *ngIf="!buy && serverService.loggedIn()" >
+        <span class="glyphicon glyphicon-hand-right"> </span>
+         <a  (click)="onAddToMyCourse()"  class=" button btn btn-primary"style="cursor:pointer"> 
+        <span class="glyphicon glyphicon-shopping-cart"></span>   Buy course</a>
+       </div>-
+       <div *ngIf="!serverService.loggedIn()" >
+        <span class="glyphicon glyphicon-hand-right"> </span> <a  routerLink="/login"  class="btn btn-primary  buttonfamily"style="cursor:pointer"> 
+        <span class="glyphicon glyphicon-shopping-cart"></span>   Buy course</a>
+       </div>
+ <div *ngIf="buy" class="family text2"> <span class="glyphicon glyphicon-shopping-cart"></span><span>   buyed course</span></div>
+      </div>
+
+      <div>
+        <p class="family  details  size" *ngIf="descrip">{{course.courseDetail}}</p>
+      </div>
+  
+  </div>
+ 
+ 
          
 

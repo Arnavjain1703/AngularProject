@@ -1,13 +1,11 @@
+<div style="background:#FFDD48">
 <div class="backg">  
 <app-user-course></app-user-course>
-<h3 class="heading">Get Bootstrap courses for 50% Off</h3>
-<h3 class="heading">Offer Limited For Today only</h3>
+
+
 </div>
-<h1 class="heading2"> COURSES FOR YOU </h1>
-    <div class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6">
-<div class="set">
+<div class="row">
+    <div class="col-lg-10">
     <app-user-course-item 
     *ngFor ="let course of courses;let i=index"
     [course]="course"
@@ -15,11 +13,15 @@
     [index]="i">
     </app-user-course-item>
     </div>
+    <div class="col-lg-2" *ngIf="instruct " >
+        <H1 class="anima"> ADD NEW COURSE</H1><br>
+        <div class="icon"><span class=" glyphicon glyphicon-hand-down"></span></div>     
+            <div *ngIf="instruct " class="align" >
+                    <BUTTON class="btn btn-success button" routerLink="/courselist" >ADD COURSE</BUTTON>
+            </div>
     </div>
-    <div class="col-lg-3"></div>
+    
+</div>
+</div>
 
-
-    <br>
-    </div>
-  
     

@@ -4,6 +4,7 @@ import { CourseService } from '../course.service';
 import { CourseUserService } from '../courseuser.service';
 
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ServerService } from '../server.service';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class CourseEditComponent implements OnInit {
 
   constructor( private courseService:CourseService,
               private courseUserService:CourseUserService,
+              private serverService:ServerService,
               
 
                private route:ActivatedRoute,
@@ -29,10 +31,12 @@ export class CourseEditComponent implements OnInit {
       this.id=+params['id'];
       this.editMode=params['id'] !=null;
       this.initForm();});
-      // this.dataStorageService.getCourses()
-      // .subscribe(Response=>{
-      //   this.courses=Response;
-      // })
+      if(!this.editMode)
+      {
+        
+      }
+
+      
      
       
       
@@ -49,51 +53,60 @@ export class CourseEditComponent implements OnInit {
       
     }
     
-  
+   
   onSubmit()
   {
     
-  
+     const courseName=this.courseForm.value.courseName;
+     const category=this.courseForm.value.category;
+     const courseDetail=this.courseForm.value.courseDetail;
+     const imageUrl= this.courseForm.value.imageUrl;
+     const courseUrl=this.courseForm.value.courseUrl;
+     const  price=  this.courseForm.value.price;
+     const course= this.courseService.getCourse(this.id)
     
     if(this.editMode)
     {
       this.courseService.updateCourse(this.id,this.courseForm.value);
       this.courseUserService.updateCourseUser(this.id,this.courseForm.value);
+      this.serverService.updateCourse(courseName,category,courseDetail,imageUrl,courseUrl,price,course.courseId);
+
 
     }
     else{
       this.courseService.addCourse(this.courseForm.value);
       this.courseUserService.addCourseUser(this.courseForm.value);
-
+      this.serverService.addcourses(courseName,category,courseDetail,imageUrl,courseUrl,price)
     }
    this.onCancle();
   }
   private initForm()
   {
     let courseName='';
-    let courseDescription='';
-    let courseImagePath='';
-    let coursePrice=0;
-    let courseCategory='';
-    let courseVideoPath='';
+    let courseDetail='';
+    let imageUrl='';
+    let price=0;
+    let category='';
+    let courseUrl='';
+  
     if(this.editMode)
     {
       const course=this.courseService.getCourse(this.id)
       courseName=course.courseName;
-      courseDescription=course.courseDetail;
-      courseImagePath=course.imageUrl;
-      coursePrice=course.price;
-      courseCategory=course.category;
-      courseVideoPath=course.courseUrl;
-
+      courseDetail=course.courseDetail;
+      imageUrl=course.imageUrl;
+      price=course.price;
+      category=course.category;
+      courseUrl=course.courseUrl;
+    
     }
     this.courseForm=new FormGroup({
-      'name': new FormControl(courseName,Validators.required),
-      'imagePath':new FormControl(courseImagePath,Validators.required),
-      'description':new FormControl(courseDescription,Validators.required),
-      'price':new FormControl(coursePrice,Validators.required),
-       'category':new FormControl(courseCategory),
-       'videoPath':new FormControl(courseVideoPath,Validators.required)
+      'courseName': new FormControl(courseName,Validators.required),
+      'imageUrl':new FormControl(imageUrl,Validators.required),
+      'courseDetail':new FormControl(courseDetail,Validators.required),
+      'price':new FormControl(price,Validators.required),
+       'category':new FormControl(category),
+       'courseUrl':new FormControl(courseUrl,Validators.required)
      
     })
   }

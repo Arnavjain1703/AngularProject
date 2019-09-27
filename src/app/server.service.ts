@@ -5,16 +5,19 @@ import { CourseUserService } from './courseuser.service';
 import { CourseService } from './course.service';
 import { CourseUser } from './shared/courseuser.module';
 import { UserCartService } from './usercart.service';
+import { MyCourseService } from './mycourse.sercice';
  @Injectable()
 export class  ServerService
 {  body:{}; 
   tk:any;
   courses:CourseUser[]
-  private rootUrl="http://10.10.151.253:8080"
+  private rootUrl="https://e0bdcda7.ngrok.io"
   
   constructor(private http :HttpClient,
               private courseuserService:CourseUserService,
-              private userCartService:UserCartService
+              private userCartService:UserCartService,
+              private myCourseService:MyCourseService,
+              private courseService:CourseService,
     ){}
   signUp(firstName:string,lastName:string,email:string,password:string ,admin:string,confirmPassword:string)
   {
@@ -84,24 +87,71 @@ export class  ServerService
           }
         );
   
-       }
-     
+       
+      }
+
+
+     getMyCoursesUser()
+     {
+       const token =localStorage.getItem('token')
+         const headers=new HttpHeaders(
+           {
+            'Content-Type':'application/json',
+            'Authorization': 'Bearer ' + token,
+           }
+         );
+         return this.http.get(this.rootUrl+'/myCourse/view',{headers:headers})
+         .subscribe(
+                    response=>{
+             console.log(response)
+               this.tk=response;
+               this.courses=this.tk
+               this.myCourseService.setCourses(this.courses);
+             
+                    }
+         )
+     }
+
+     getadminCourse()
+     {
+      const token =localStorage.getItem('token')
+      const headers=new HttpHeaders(
+        {
+         'Content-Type':'application/json',
+         'Authorization': 'Bearer ' + token,
+        }
+      );
+      return this.http.get(this.rootUrl+'/course/uploadedByMe',{headers:headers})
+      .subscribe(
+        response =>{
+          this.tk=response;
+          this.courses=this.tk;
+          this.courseService.setCourses(this.courses);
+        }
+      )
+
+     }
   
   cartDelete(courseId:number)
   {
     const token =localStorage.getItem('token')
-    console.log(token);
+    console.log(courseId);
     const headers = new HttpHeaders(
       {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token,
       }
     );
-    return this.http.post(this.rootUrl+'/cart/removeCourses/'+courseId,this.body,{headers:headers})
+    return this.http.post(this.rootUrl+'/cart/removeCourse/'+courseId,this.body,{headers:headers})
     .subscribe(
-      response =>
+      (response) =>
       {
         console.log(response);
+      },
+      (error)=>
+      {
+          console.log(error.error.text)
+          alert(error.error.text)
       }
     )
   }
@@ -117,6 +167,31 @@ export class  ServerService
        console.log({headers:headers});
        return this.http.post(this.rootUrl+'/cart/addCourse/'+courseId,this.body,{headers: headers})
       .subscribe(
+         (response)=>
+         {
+           console.log(response)
+         },
+         (error) => {
+          alert(error.error.text);
+         }
+
+      );
+  
+  }
+
+  
+
+  userCourse(courseId:number)
+  {
+    const token= localStorage.getItem('token')
+    console.log(typeof(token))
+    const headers = new HttpHeaders({
+      'Content-Type':'application/json;charset=UTF-8',
+      'Authorization': 'Bearer ' + token
+    });
+       console.log({headers:headers});
+       return this.http.post(this.rootUrl+'/myCourse/purchase/'+courseId,this.body,{headers: headers})
+      .subscribe(
         res=>
         {
           console.log(res);
@@ -129,4 +204,43 @@ export class  ServerService
       );
   
   }
+  addcourses(courseName:string,category:string,courseDetail:string,imageUrl:string,courseUrl:string,price:number)
+  {    
+       const token=localStorage.getItem('token')
+       const headers=new HttpHeaders(
+         
+      {
+        'Content-Type':'application/json;charset=UTF-8',
+        'Authorization': 'Bearer ' + token
+      }
+      )
+       return this.http.post(this.rootUrl+'/course/upload',JSON.stringify({courseName,category,courseDetail,imageUrl,courseUrl,price}),{headers:headers})
+       .subscribe
+       (
+         response=>
+         {
+           console.log(response);
+         }
+       )
+  }
+    updateCourse(courseName:string,category:string,courseDetail:string,imageUrl:string,courseUrl:string,price:number,courseId:number)
+    {
+      const token=localStorage.getItem('token')
+      const headers=new HttpHeaders(
+        
+     {
+       'Content-Type':'application/json;charset=UTF-8',
+       'Authorization': 'Bearer ' + token
+     }
+     )
+    
+      return this.http.patch(this.rootUrl+'/course/update/'+courseId,JSON.stringify({courseName,category,courseDetail,imageUrl,courseUrl,price}),{headers:headers})
+      .subscribe
+      (
+        response=>
+        {
+          console.log(response);
+        }
+      ) 
+    }
 }

@@ -15,13 +15,25 @@ import { ServerService } from 'src/app/server.service';
 export class UserCourseListComponent implements OnInit  {
   private subscription:Subscription;
   res:any;
+  role:any;
+  instruct=false;
+  // this.role=localStorage.getItem('role');
+
+  
+
   courses:CourseUser[];
   constructor(private courseService:CourseUserService,
                private serverService:ServerService) { }
 
   ngOnInit() {
+    this.role=localStorage.getItem('role');
+  
     this.courses=this.courseService. getCoursesUser();
-
+    console.log(this.role);
+    if(this.role === 'Instructor') {
+      this.instruct = true;
+  }
+  
   this.serverService.getallCourses();
 this.subscription=this.courseService.coursesUserChanged
 .subscribe((courses:CourseUser[])=>{
@@ -31,6 +43,7 @@ this.subscription=this.courseService.coursesUserChanged
 );
  console.log(this.courseService. getCoursesUser())
 }
+
 
  ngOnDestroy()
  {

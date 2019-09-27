@@ -1,0 +1,38 @@
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="submit"  [disabled]="!userForm.valid"  class="btn btn-success heading">Save</button>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label for="firstName" >firstName</label>
+            <input type="text" id="firstName" formControlName="firstName" class="form-control">
+          
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label for="lastName" >lastName</label>
+                <input type="text" id="lastName" formControlName="lastName" class="form-control" 
+                >
+              
+            </div>
+        </div>
+        </div>
+        <div class="row" >
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="password">PASSWORD</label>
+                        <input type="text" id="password" formControlName="password" class="form-control" 
+                        >
+                      
+                    </div>
+                </div>
+                </div>
+              
+</form>

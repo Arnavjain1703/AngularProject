@@ -15,6 +15,7 @@ export class DesigningComponent implements OnInit {
 
  ngOnInit() {
    this.courses=this.designService. getCoursesUser();
+   
  }
 
 }

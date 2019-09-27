@@ -14,6 +14,7 @@ import { DesigningComponent } from './categories/designing/designing.component';
 import { MusicComponent } from './categories/music/music.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthGuard } from './auth.guard';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const appRoutes: Routes=[
     {path:'',redirectTo: 'frontpage', pathMatch:'full'}, 
@@ -31,7 +32,8 @@ const appRoutes: Routes=[
     {path:'craft',component:CraftComponent},
     {path:'designing',component:DesigningComponent},
     {path:'music',component:MusicComponent},
-    {path:'signup',component:SignupComponent}
+    {path:'signup',component:SignupComponent},
+    {path:'profile',component:EditProfileComponent}
 
   
  

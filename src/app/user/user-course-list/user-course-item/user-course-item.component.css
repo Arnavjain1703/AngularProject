@@ -1,4 +1,4 @@
-
+/* 
 .set
 {
     background:rgb(232, 233, 233);
@@ -40,4 +40,52 @@
 hr
 {
  border: solid 2px black;
+} */
+
+
+.img2
+{
+    height: 200px;
+    width:100%;
+     padding-top:20px;
 }
+.family
+{
+    font-family: cursive;
+    text-align: center;
+}
+
+.size
+{
+    font-size:40px;
+
+}
+.highlight
+{
+  box-shadow:2px 2px 2px 2px black;
+  margin-bottom:20px;
+  background:white;
+}
+
+.details
+{
+    padding-top:50px;
+}
+.button
+{
+    margin-bottom:30px;
+    margin-top:30px;
+    font-size: 20px;
+}
+.text{
+      padding-top:30px;
+      font-size:40px;
+      color:red
+    }
+ .text2
+ {
+     padding-top:60px;
+     font-size:40px;
+     color:blue;
+       padding-right:40px;
+ }   

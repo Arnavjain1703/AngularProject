@@ -36,6 +36,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServerService } from './server.service';
 import { AuthGuard } from './auth.guard';
 import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validators.directive';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 
@@ -65,7 +66,8 @@ import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validator
     CraftItemComponent,
     MusicComponent,
     MusicItemComponent,
-    ConfirmEqualValidatorDirective
+    ConfirmEqualValidatorDirective,
+    EditProfileComponent
     
   
   ],

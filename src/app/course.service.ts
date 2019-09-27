@@ -12,7 +12,6 @@ private courses: CourseUser[]=[
 getCourses()
 {
     return this.courses.slice();
- this.coursesChanged.next(this.courses.slice())
 
 }
 getCourse(index:number)
@@ -34,11 +33,11 @@ deleteCourse(index:number){
     this.courses.splice(index,1);
  this.coursesChanged.next(this.courses.slice());
 }
-// setCourses(courses:CourseUser[])
-// {
-//     // this.courses =courses;
-//     this.coursesChanged.next(this.courses.slice());
+setCourses(courses:CourseUser[])
+ {
+      this.courses =courses;
+     this.coursesChanged.next(this.courses.slice());
 
-// }
+ }
 
 }
