@@ -1,5 +1,9 @@
+<div class="bgcolor">
 <app-header></app-header>
-<div class="container jumbotron">
+
+<div class="row main">
+    <div class="col-lg-3 bgleft"><img class="imgsize" src="https://www.sccpre.cat/mypng/full/8-87427_pencil-cartoon-png-cartoon-images-of-pencils.png"></div>
+<div class="margin col-lg-6 jumbotron">
     
 <div class="row">
     <div class="col-xs-12">
@@ -13,17 +17,19 @@
                     <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <label for="name " class="heading">Name</label>
-                            <input type="text" id="name" formControlName="courseName" class="form-control">
-                          
+                            <label for="name " class="heading ">COURSE NAME</label>
+                            <input type="text" id="name"placeholder="COURSE NAME" formControlName="courseName"
+                             class="form-control"#courseName>
+                       <span class="heading" *ngIf="!courseName.valid && courseName.touched " >PLEASE ENTER COURSE NAME</span>
+                                
                         </div>
                     </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
-                                <label for="imagePath " class="heading">Image URL</label>
-                                <input type="text" id="imagePath" formControlName="imageUrl" class="form-control" 
+                                <label for="imagePath " class="heading">FRONT IMAGE URL</label>
+                                <input type="text" id="imagePath" placeholder="FRONT IMAGE URL" formControlName="imageUrl" class="form-control" 
                                 #imageUrl>
                               
                             </div>
@@ -32,8 +38,8 @@
                         <div class="row" >
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label for="videoPath " class="heading">VIDEO  URL</label>
-                                        <input type="text" id="videoPath" formControlName="courseUrl" class="form-control" 
+                                        <label for="videoPath " class="heading"> COURSE VIDEO  URL</label>
+                                        <input type="text" id="videoPath"placeholder=" COURSE VIDEO  URL" formControlName="courseUrl" class="form-control" 
                                         #courseUrl>
                                       
                                     </div>
@@ -49,8 +55,8 @@
                     <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group">
-                                    <label for="description" class="heading" >Description</label>
-                                    <textarea  formControlName="courseDetail"type="text" id="description" class="form-control" rows="6">
+                                    <label for="description" class="heading" >COURSE DETAILS</label>
+                                    <textarea  placeholder="COURSE DETAILS" formControlName="courseDetail"type="text" id="description" class="form-control" rows="7">
                                       </textarea>
                                 </div>
                             </div>
@@ -58,13 +64,13 @@
                             <div class="row">
                                     <div class="col-xs-12">
                                         <div class="form-group">
-                                            <label for="price " class="heading">price</label>
-                                            <input type="number" [maxlength]=4 id="price" formControlName="price" class="form-control">
+                                            <label for="price " class="heading">PRICE</label>
+                                            <input type="number" [pattern]="'^[1-9]+[0-9]*$'" minlength="4" id="price" formControlName="price" class="form-control">
                                             </div>
         
                                         </div>
                             </div>
-                        
+               <label class="heading">COURSE CATEGORY IF ANY</label>         
             <div class="form-group" >
             <input  type="radio"  formControlName="category" value="WebDevelopment" > <span class="heading" required>WEB DEVELOPMENT </span><br>
             <input  type="radio"  formControlName="category" value="Designing"> <span class="heading" required>DESIGNING </span><br>
@@ -76,5 +82,8 @@
             </form>
        
     </div>
+</div>
+</div>
+<div class="col-lg-3"></div>
 </div>
 </div>

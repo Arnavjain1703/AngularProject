@@ -14,6 +14,10 @@
 }
 .contentbg
 {
-    background:#D2B4DE ;
     padding-bottom:50px;
+}
+.body
+{
+    background:#D2B4DE ;
+    min-height:800px;
 }

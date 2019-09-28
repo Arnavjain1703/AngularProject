@@ -1,0 +1,16 @@
+.bgcolor
+{
+    background: #48FFD7
+}
+.imgsize{
+    height: 400px;
+    margin-top:200px;
+}
+
+.heading
+{
+    font-family: cursive;
+}
+input.ng-invalid.ng-touched,textarea.ng-invalid.ng-touched{
+    border:2px solid red;
+}

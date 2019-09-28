@@ -1,6 +1,6 @@
 <div  (click)="description()" *ngIf="course.category == 'WebDevelopment'">
   <div  (click)="description()" >
-    <div class="desc"><div class="size"><u>{{course.name}}</u></div>
+    <div class="desc"><div class="size"><u>{{course.courseName}}</u></div>
     <div style="text-align:center"> <img class="img2"
     [src]="course.imagePath" 
     alt="{{course.name}}" >
@@ -21,8 +21,9 @@
          <div *ngIf="buy"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div>
         </div>
       </div>
-     <div *ngIf="descrip" class="size">{{course.description}}</div>
+     <div *ngIf="descrip" class="size">{{course.CourseDetail}}</div>
      </div>
+  </div>
   </div>
       
              

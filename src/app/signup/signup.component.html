@@ -1,5 +1,5 @@
 
-
+<ngx-ui-loader></ngx-ui-loader>
 <div class="bgImg">
         <app-header></app-header>
 
@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row background">
 
-        <div class="col-lg-6  "><img src="https://greekss.com/images/signup.png"></div>
+        <div class="col-lg-6  "><img src="https://ak2.picdn.net/shutterstock/videos/15132442/thumb/12.jpg"></div>
  
         <div class="col-lg-6 form" >
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
@@ -91,7 +91,22 @@
                 </div>
                 </div>            
      </form>
-     
+               <div *ngIf="otp">     
+                <form  (ngSubmit)="onSubmitotp(o)"  #o="ngForm">
+                    <label class="family"> ENTER OTP</label>
+                    <input type="text"placeholder="ENTER OTP" name="otp"  ngModel
+                     class="form-control" required #otp="ngModel">
+                     <div class="row">
+                     <div class="col-lg-6">
+                     <button type="submit" [disabled]="!o.valid" class="btn btn-primary margin family">SUBMIT</button>
+                     </div>
+                     <div class="col-lg-6">
+                         <button type="button" (click)="resendOtp()"class="btn btn-success margin family">RESEND OTP</button>
+                     </div>
+                     </div> 
+                </form>
+                <div>
+
      </div>
      
      </div>

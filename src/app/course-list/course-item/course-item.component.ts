@@ -7,12 +7,22 @@ import { CourseUser } from 'src/app/shared/courseuser.module';
   styleUrls: ['./course-item.component.css']
 })
 export class CourseItemComponent implements OnInit {
-
+   
   @Input () course:CourseUser;
   @Input()index:number;
+   show=false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  mouseOver()
+  {
+    this.show=true;
+  }
+  mouseOut()
+  {
+     this.show=false;
   }
 
 }

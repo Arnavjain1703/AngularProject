@@ -1,31 +1,36 @@
 
-  
-   <div class="row scale ">
-    <div class="col-lg-4 set"(click)="shows()"><div class="desc  " *ngIf="this.show">{{course.description}}</div>
-                          <div class="desc"*ngIf="!this.show"><h1><u>DESCRIPTION</u></h1></div>
+  <div class="margin">  
+ <div class="row highlight"  (mouseover)="mouseOver()" (mouseout)="mouseOut()">
+  <div class="col-lg-5 center">
+   <img class="img2"
+   [src]="course.imageUrl" 
+   alt="{{course.courseName}}" >
   </div>
-    <div class="col-lg-8">
-      <div class="row set">
-   <div class="col-lg-4 " style="padding-left:0%">
-     
-  <img style="height:100px ;width:100%"
-           
-        [src]="course.imagePath" 
-      alt="{{course.name}}" 
-      class="img-responsive img "
-       >
-       </div>
- <div class="col-lg-4 name" style="height:100px" >
-         <h1>{{course.name}}</h1>
-        
-    </div>
-    <div class="col-lg-4 button" style="height:100px" >
-      <span class="glyphicon glyphicon-hand-right"></span> <a  class="btn btn-primary " [routerLink]="[index,'edit']" style="cursor:pointer">    <span class="glyphicon glyphicon-heart-filled"></span> EDIT</a>
-        <br>
-    </div>
-    </div>
-    </div>
-    </div>
-         
+  <div class="col-lg-3 center">
+   <h3 class="family size"><u>{{course.courseName}}</u></h3>
+   <h3 class="family size"><u>{{course.price}} RS</u></h3>
+  </div>
+   
+   <div class="col-lg-4 center">
+     <span class="glyphicon glyphicon-play-circle icon"></span>
+    <div>
+     <div><span class="glyphicon glyphicon-hand-right"></span>
+      <a  class="btn btn-primary " [routerLink]="[index,'edit']" style="cursor:pointer"> 
+           <span class="glyphicon glyphicon-heart-filled"></span> EDIT</a>
+     </div>
+  
        
-
+   
+   </div>
+   </div>
+ </div>
+   <div>
+    <p class="details" *ngIf="show">{{course.courseDetail}}</p>
+  </div>
+  </div>
+   
+  
+  
+          
+ 
+ 

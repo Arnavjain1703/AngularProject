@@ -37,7 +37,7 @@ import { ServerService } from './server.service';
 import { AuthGuard } from './auth.guard';
 import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validators.directive';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-
+import { NgxUiLoaderModule } from  'ngx-ui-loader';
 
 
 @NgModule({
@@ -67,7 +67,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     MusicComponent,
     MusicItemComponent,
     ConfirmEqualValidatorDirective,
-    EditProfileComponent
+    EditProfileComponent,
     
   
   ],
@@ -76,7 +76,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule 
+
     
   ],
   providers: [CourseService,CourseUserService,UserCartService,MyCourseService,ServerService,AuthGuard,

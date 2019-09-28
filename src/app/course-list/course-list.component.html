@@ -1,8 +1,13 @@
 <div class="body">
+<div >
 <app-header></app-header>
 
-<div > <H1 class="heading">COURSES ADDED BY YOU</H1></div>
+<img class="background container" src="https://image.freepik.com/free-vector/programmer-s-workplace-writing-code-laptop_80328-238.jpg">
+</div>
+
+<div class="heading"> COURSES YOU UPLODED</div>
 <div class="row" >
+    <div class="col-lg-1"></div>
 <div class="col-lg-8">
 <app-course-item 
 *ngFor ="let course of courses;let i=index"
@@ -10,10 +15,10 @@
 [index]="i">
 </app-course-item>
 </div>
-<div class="col-lg-4 
+<div class="col-lg-3 center 
 ">
-    <h1 class="enter">WANT TO ENTER NO COURSES!!!</h1>
-       <span class="glyphicon glyphicon-hand-down"></span><br>
+    <h1 >UPLODE NEW COURSES</h1>
+       <span style="font-size:10px;" class="glyphicon glyphicon-hand-down"></span><br>
     <BUTTON  routerLink="/new"class="btn btn-success">NEW COURSE</BUTTON>
 </div>
 </div>  

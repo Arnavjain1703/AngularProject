@@ -11,7 +11,8 @@ export class  ServerService
 {  body:{}; 
   tk:any;
   courses:CourseUser[]
-  private rootUrl="https://e0bdcda7.ngrok.io"
+  private rootUrl="https://b54338ee.ngrok.io"
+  
   
   constructor(private http :HttpClient,
               private courseuserService:CourseUserService,
@@ -19,13 +20,13 @@ export class  ServerService
               private myCourseService:MyCourseService,
               private courseService:CourseService,
     ){}
-  signUp(firstName:string,lastName:string,email:string,password:string ,admin:string,confirmPassword:string)
-  {
-    const headers = new HttpHeaders({'Content-Type':'application/json'});
-    console.log(JSON.stringify({firstName,lastName,email,password,admin,}));
-    return  this.http.post(this.rootUrl+'/user/signUp',JSON.stringify({firstName,lastName,email,password,confirmPassword,admin}),
-    {headers:headers});
-  }
+  // signUp(firstName:string,lastName:string,email:string,password:string ,admin:string,confirmPassword:string)
+  // {
+  //   const headers = new HttpHeaders({'Content-Type':'application/json'});
+  //   console.log(JSON.stringify({firstName,lastName,email,password,admin,}));
+  //   return  this.http.post(this.rootUrl+'/user/signUp',JSON.stringify({firstName,lastName,email,password,confirmPassword,admin}),
+  //   {headers:headers});
+  // }
 
   login(email:string ,password:string)
   { 
@@ -75,6 +76,7 @@ export class  ServerService
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token,
        });
+       console.log(headers);
        return  this.http.get(this.rootUrl+'/cart/view',{headers:headers})
         .subscribe(
           response=>
@@ -243,4 +245,77 @@ export class  ServerService
         }
       ) 
     }
+
+    onDelete()
+    {
+      const token=localStorage.getItem('token')
+         const headers=new HttpHeaders(
+           {
+             'content-Type':'application/json',
+              'Authorization':'Bearer '+token
+           }
+         );
+         console.log(headers)
+         return this.http.delete(this.rootUrl+'/user/deleteAccount' ,{headers:headers})
+         .subscribe
+         (
+           response=>
+           {
+             console.log(response);
+           }
+         )
+    }
+
+    signUp(firstName:string,lastName:string,email:string,password:string ,admin:string,confirmPassword:string)
+    {
+      const headers = new HttpHeaders({'Content-Type':'application/json'});
+      console.log(JSON.stringify({firstName,lastName,email,password,admin,}));
+      return  this.http.post(this.rootUrl+'/user/signUp',JSON.stringify({firstName,lastName,email,password,confirmPassword,admin}),
+      {headers:headers});
+    }
+
+    otpSend(otp:string)
+    {     
+      const headers=new HttpHeaders(
+        {
+          'content-Type':'application/json'
+        }
+      );
+
+
+              console.log(JSON.stringify({otp}));
+         console.log(this.rootUrl+'/user/verifyEmail/'+localStorage.getItem('userId'));       
+         return this.http.post(this.rootUrl+'/user/verifyEmail/'+localStorage.getItem('userId'),JSON.stringify({otp}),{headers:headers});
+            
+    }
+
+    resend()
+    {
+      return this.http.get(this.rootUrl+'/user/resendOtp/'+localStorage.getItem('userId'));
+    }
+
+    getprofileitem()
+    {
+      const token =localStorage.getItem('token')
+      const headers=new HttpHeaders(
+        {
+         'Content-Type':'application/json',
+         'Authorization': 'Bearer ' + token,
+        }
+      );
+      return this.http.get(this.rootUrl+'/user/me',{headers:headers})
+    }
+
+    updateProfile(firstName:string,lastName:string)
+  {
+     const token =localStorage.getItem('token')
+        const headers=new HttpHeaders(
+              {
+              'Content-Type':'application/json',
+              'Authorization': 'Bearer ' + token,
+              }
+            );
+            return this.http.patch( this.rootUrl+'/user/update/profile',{firstName,lastName},{headers:headers})
+  }
+  
 }

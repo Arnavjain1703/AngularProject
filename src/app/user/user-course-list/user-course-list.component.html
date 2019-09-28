@@ -1,11 +1,11 @@
-<div style="background:#FFDD48">
+
 <div class="backg">  
 <app-user-course></app-user-course>
-
+<img src="https://www.kortext.com/images/thumbs/0171251_how-the-digital-age-will-impact-higher-education.jpeg">
 
 </div>
 <div class="row">
-    <div class="col-lg-10">
+    <div class="col-lg-8">
     <app-user-course-item 
     *ngFor ="let course of courses;let i=index"
     [course]="course"
@@ -13,6 +13,7 @@
     [index]="i">
     </app-user-course-item>
     </div>
+    <div class="col-lg-2"></div>
     <div class="col-lg-2" *ngIf="instruct " >
         <H1 class="anima"> ADD NEW COURSE</H1><br>
         <div class="icon"><span class=" glyphicon glyphicon-hand-down"></span></div>     
@@ -20,8 +21,7 @@
                     <BUTTON class="btn btn-success button" routerLink="/courselist" >ADD COURSE</BUTTON>
             </div>
     </div>
-    
 </div>
-</div>
+
 
     

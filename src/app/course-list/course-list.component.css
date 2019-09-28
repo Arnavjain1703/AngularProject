@@ -6,19 +6,25 @@
 .heading
 {
     text-align: center;
-    font-size:  60px;
+    font-size:  30px;
     font-family: cursive;
-    border-bottom: 4px solid black;
-    border-top:4px solid black;
 }
-.enter
+.center
 {
     font-family: cursive;
+    text-align: center;
 }
 .body
 {
-    background:  #E2E0E3;
-    height:1000px
+     background:#D1F2EB ; 
+    min-height:730px;
     
     
+}
+
+.background
+{
+    height:300px;
+    margin-left: 150px;
+
 }

@@ -1,38 +1,42 @@
-
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+<div class="bgcolor">
+    <div class="row" >
+        
+        <div class="col-lg-4"><img src="https://termii.com/assets/images/contact.png"></div>
+    <div class="col-lg-8">
+        <h1 class="family">EDIT YOUR PROFILE</h1>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="margin">
     <div class="row">
         <div class="col-xs-12">
-            <button type="submit"  [disabled]="!userForm.valid"  class="btn btn-success heading">Save</button>
+            <button type="submit"   [disabled]="!userForm.valid"  class="btn btn-success heading family">Save</button>
+            <button type="button"      [routerLink]="['/usercourse','usercourselist']"  class="btn btn-danger heading family"> CANCLE</button>
+
         </div>
     </div>
     <div class="row">
     <div class="col-xs-12">
-        <div class="form-group">
+        <div class="form-group family">
             <label for="firstName" >firstName</label>
-            <input type="text" id="firstName" formControlName="firstName" class="form-control">
+            <input type="text" id="firstName" formControlName="firstName"  class="form-control">
           
         </div>
     </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="form-group">
-                <label for="lastName" >lastName</label>
+            <div class="form-group family">
+                <label for="lastName"  >lastName</label>
                 <input type="text" id="lastName" formControlName="lastName" class="form-control" 
-                >
+                > 
               
             </div>
         </div>
         </div>
-        <div class="row" >
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="password">PASSWORD</label>
-                        <input type="text" id="password" formControlName="password" class="form-control" 
-                        >
-                      
-                    </div>
-                </div>
-                </div>
+
+        <button  type="button"class="btn btn-danger family" (click)="Delete()"> DELETE ACCOUNT</button>
+       
               
 </form>
+
+</div>
+</div>
+</div>
