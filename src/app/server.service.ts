@@ -11,7 +11,7 @@ export class  ServerService
 {  body:{}; 
   tk:any;
   courses:CourseUser[]
-  private rootUrl="https://b54338ee.ngrok.io"
+  private rootUrl="https://study-easy.herokuapp.com"
   
   
   constructor(private http :HttpClient,
